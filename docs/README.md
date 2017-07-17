@@ -5,7 +5,8 @@
 A faithful clone to soundcloud.com. This sight allows you to upload,
 listen to, edit, and delete music of your own, search, like, and comment
 on other user’s uploads, follow other users, comment on uploads, and
-finally features continuous play so you may do all of the above seamlessly as you explore the site.
+finally features continuous play so you may do all of the above seamlessly
+as you explore the site.
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
@@ -17,15 +18,15 @@ finally features continuous play so you may do all of the above seamlessly as yo
 - [ ] Followers
 
 ## Design Docs
-* [React Components][component-hierarchy]
+* [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[components]: ./component-hierarchy.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 

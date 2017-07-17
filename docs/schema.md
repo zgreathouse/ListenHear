@@ -22,7 +22,7 @@ column name         |  data type    |  details
 Id                  | integer       | not null, primary key
 song_url            | string        | not null, unique
 title               | string        | not null
-Artist              | string        | not null, unique
+Artist              | string        | not null
 genre               | string        | not null
 user_id             | integer       | not null, foreign key
 Image_url           | string        |    
@@ -40,6 +40,6 @@ comment_time        | string        | not null
 ## Likes (join table between users and songs)
 column name         |  data type    |  details
 --------------------|---------------|---------------------
-Id                  | integer            not null, primary key
-user_id             | integer            not null, foreign key
-song_id             | integer            not null, foreign key
+Id                  | integer       | not null, primary key
+user_id             | integer       | not null, foreign key
+song_id             | integer       | not null, foreign key

@@ -8,7 +8,7 @@ const state = {
 			profile_picture_url: “image_url…”
 		}
 	},
-	NowPlaying: {
+	songs: {
 		song: {
 			id: 9,
 			title: “Mistaken for Strangers”,
