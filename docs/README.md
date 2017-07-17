@@ -17,11 +17,15 @@ finally features continuous play so you may do all of the above seamlessly as yo
 - [ ] Followers
 
 ## Design Docs
-* [View Wireframes][wireframes]
 * [React Components][component-hierarchy]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 * [Sample State][sample-state]
+
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
 ## Implementation Timeline
 
