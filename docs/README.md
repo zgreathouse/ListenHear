@@ -1,5 +1,3 @@
-========================================================================
-
 Minimum Viable Product
 A faithful clone to soundcloud.com. This sight allows you to upload,
 listen to, edit, and delete music of your own, search, like, and comment
@@ -16,48 +14,44 @@ seamlessly as you explore the site.
 * Likes
 * Followers
 
-
-========================================================================
-
 Schema
 
-Users
-* Id                      integer            not null, primary key
-* username                string             not null, unique
-* password_digest         string             not null,
-* session_token           string             not null, unique
-* profile_picture_url     string
+Users                    Datatype           Constraints
+*Id                      integer            not null, primary key
+*username                string             not null, unique
+*password_digest         string             not null,
+*session_token           string             not null, unique
+*profile_picture_url     string
 
 Follows (join table between users)
-* Id                      integer            not null, primary key
-* follower_id             integer            not null, foreign key
-* followed_user_id        integer            not null, foreign key
+*Id                      integer            not null, primary key
+*follower_id             integer            not null, foreign key
+*followed_id             integer            not null, foreign key
 
 Songs
-* Id                      integer            not null, primary key
-* song_url                string             not null, unique
-* title                   string             not null
-* Artist                  string             not null, unique
-* genre                   string             not null
-* user_id                 integer            not null, foreign key
-* Image_url               string
-* likes                   integer            
-* time_of_upload          string             not null
+*Id                      integer            not null, primary key
+*song_url                string             not null, unique
+*title                   string             not null
+*Artist                  string             not null, unique
+*genre                   string             not null
+*user_id                 integer            not null, foreign key
+*Image_url               string         
+*time_of_upload          string             not null
 
 Comments
-* Id                      integer            not null, primary key
-* song_id                 integer            not null, foreign key
-* user_id                 integer            not null, foreign key
-* body                    text               not null
-* comment_time            string             not null
+*Id                      integer            not null, primary key
+*song_id                 integer            not null, foreign key
+*user_id                 integer            not null, foreign key
+*body                    text               not null
+*comment_time            string             not null
 
 Likes (join table between users and songs)
-* Id                      integer            not null, primary key
-* user_id                 integer            not null, foreign key
-* song_id                 integer            not null, foreign key
+*Id                      integer            not null, primary key
+*user_id                 integer            not null, foreign key
+*song_id                 integer            not null, foreign key
 
 
-========================================================================
+
 
 End Points
 
@@ -71,7 +65,7 @@ Path							Component
 "/upload"						UploadContainer
 
 
-========================================================================
+
 
 Sample State
 
@@ -109,10 +103,9 @@ Const state = {
 }//state		
 
 
-========================================================================
+
 
 Component Hierarchy
-
 
 Home Page
 *  Auth form
@@ -146,7 +139,7 @@ Upload Container
 *   Upload Form
 
 
-========================================================================
+
 
 Implementation Timeline
 
