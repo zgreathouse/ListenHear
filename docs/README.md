@@ -1,161 +1,41 @@
-Minimum Viable Product
+#ListenHere
+
+##Minimum Viable Product
+
 A faithful clone to soundcloud.com. This sight allows you to upload,
 listen to, edit, and delete music of your own, search, like, and comment
 on other user’s uploads, follow other users, comment on uploads, and
-finally features continuous play so you may do all of the above
-seamlessly as you explore the site.
+finally features continuous play so you may do all of the above seamlessly as you explore the site.
 
-* Hosting on Heroku
-* New account creation, login, and guest/demo login
-* Song CRUD
-* Playing songs with progress bar with continuous play
-* User pages
-* Comments
-* Likes
-* Followers
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Song CRUD
+- [ ] Playing songs with progress bar with continuous play
+- [ ] User pages
+- [ ] Comments
+- [ ] Likes
+- [ ] Followers
 
-Schema
+## Design Docs
+* [View Wireframes][wireframes]
+* [React Components][component-hierarchy]
+* [API endpoints][api-endpoints]
+* [DB schema][schema]
+* [Sample State][sample-state]
 
-Users                    Datatype           Constraints
-*Id                      integer            not null, primary key
-*username                string             not null, unique
-*password_digest         string             not null,
-*session_token           string             not null, unique
-*profile_picture_url     string
+## Implementation Timeline
 
-Follows (join table between users)
-*Id                      integer            not null, primary key
-*follower_id             integer            not null, foreign key
-*followed_id             integer            not null, foreign key
+### Phase 1: Set up Backend skeleton and frontend Authentication (2 days)
+**Objective:** Functioning rails project with frontend authentication, find songs to seed DB with
 
-Songs
-*Id                      integer            not null, primary key
-*song_url                string             not null, unique
-*title                   string             not null
-*Artist                  string             not null, unique
-*genre                   string             not null
-*user_id                 integer            not null, foreign key
-*Image_url               string         
-*time_of_upload          string             not null
+### Phase 2: Uploads (3 days)
+**Objective:** Upload/ song belong to users and CRUD made possible through API
 
-Comments
-*Id                      integer            not null, primary key
-*song_id                 integer            not null, foreign key
-*user_id                 integer            not null, foreign key
-*body                    text               not null
-*comment_time            string             not null
+### Phase 3: Commenting and Liking Uploads (3 days)
+**Objective:** Allow for users to comment and like other uploads, components included
 
-Likes (join table between users and songs)
-*Id                      integer            not null, primary key
-*user_id                 integer            not null, foreign key
-*song_id                 integer            not null, foreign key
+### Phase 4: Follows (3 day)
+**Objective:** Allow users to follow other users, user-profile and side bar components included
 
-
-
-
-End Points
-
-Path							Component
-"/"							Stream
-"/stream"						LoggedInHomePage > StreamContainer
-"/users/:id"					UserShowPage > AllContainer
-"/users/:id/songs"				UserShowPage > SongsContainer
-"/users/:userId/songs/:songId"	SongShowPage > SongPlayerWidget(:id)
-"search"						Search
-"/upload"						UploadContainer
-
-
-
-
-Sample State
-
-Const state = {
-	session: {
-		currentUser: {
-			id: 4,
-			username: “PhoenixD”
-			profile_picture_url: “image_url…”
-		}
-	},
-	NowPlaying: {
-		song: {
-			id: 9,
-			title: “Mistaken for Strangers”,
-			artist: “The National”,
-			genre: “Indie Rock”,
-			song_url: “song_url…”,
-			image_url: “image_url…”,
-			likes: 890000
-			comments: {
-				id: 34,
-				user_id: 41,
-				body: “Such a great song!”
-				comment_time: “dateOfComment”
-				},
-				{
-				id: 35,
-				user_id: 3,
-				body: “This one’s a favorite :)!”
-				comment_time: “dateOfComment”
-			}//comments
-		}//song
-	}//nowPlaying
-}//state		
-
-
-
-
-Component Hierarchy
-
-Home Page
-*  Auth form
-* Listen Here Graphic
-
-Home Page (Signed In)
-* Main page Stream
-    * SongPlayer widgets
-* SearchBar
-* SideBar
-* Header (logout, upload, search bar…etc)
-* Audio Player footer
-
-Search
-* Populates a stream of songs related search by song name and artist
-    * songplayer containers
-
-User Show Page
-* stream of songs by the user
-* Sidebar (number of followers, number of users followed, )
-
-Song Show Page
-*  Add comment
-* Read comments
-
-Song Player container
-* Contains a play button (feature for continuous play)
-* Displays image, song title, artist, number of likes, number of plays
-
-Upload Container
-*   Upload Form
-
-
-
-
-Implementation Timeline
-
-Day 1 - 2
-  Set up/style Auth and Home Page
-
-Day 4 - 7
-  Set up/ style Home page (signed in)
-  set up liking and commenting on uploads feature
-  set up follow users feature
-
-Day 8 - 10
-  Set up/ style User profile
-  upload songs feature
-  follow users
-
-Day 11 - 14
-  continuous play feature
-  finalize styling
+### Phase 5: SongPlayer (3 day)
+**Objective:** Create SongPlayer widget and allow for continuous play
