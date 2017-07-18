@@ -24,7 +24,7 @@ as you explore the site.
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[components]: docs/component-hierarchy.md
+[components]: component-hierarchy.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
 [sample-state]: docs/sample-state.md
