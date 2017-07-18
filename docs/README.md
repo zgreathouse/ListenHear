@@ -19,11 +19,13 @@ as you explore the site.
 
 ## Design Docs
 
+* [View Wireframes][wireframes]
 * [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 * [Sample State][sample-state]
 
+[wireframes]: docs/wireframes
 [components]: component-hierarchy.md
 [api-endpoints]: api-endpoints.md
 [schema]: schema.md
