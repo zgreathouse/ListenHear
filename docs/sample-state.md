@@ -9,7 +9,7 @@ const state = {
 		}
 	},
 	songs: {
-		song: {
+		1: {
 			id: 9,
 			title: “Mistaken for Strangers”,
 			artist: “The National”,
@@ -17,18 +17,20 @@ const state = {
 			song_url: “song_url…”,
 			image_url: “image_url…”,
 			likes: 890000
-			comments: {
-				id: 34,
-				user_id: 41,
-				body: “Such a great song!”
-				comment_time: “dateOfComment”
-				},
-				{
-				id: 35,
-				user_id: 3,
-				body: “This one’s a favorite :)!”
-				comment_time: “dateOfComment”
-			}//comments
 		}//song
 	}//nowPlaying
+	comments: {
+		1: {
+			id: 34,
+			user_id: 41,
+			body: “Such a great song!”
+			comment_time: “dateOfComment”
+		},
+		2: {
+			id: 35,
+			user_id: 3,
+			body: “This one’s a favorite :)!”
+			comment_time: “dateOfComment”
+		}
+	}//comments
 }//state		

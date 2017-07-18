@@ -15,9 +15,8 @@ column name         |  data type    |  details
 Id                  | integer       | not null, primary key
 song_url            | string        | not null, unique
 title               | string        | not null
-Artist              | string        | not null
 genre               | string        | not null
-user_id             | integer       | not null, foreign key
+artist_id           | integer       | not null, foreign key
 Image_url           | string        |    
 time_of_upload      | string        | not null
 
