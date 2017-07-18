@@ -4,9 +4,9 @@
 
 A faithful clone to soundcloud.com. This sight allows you to upload,
 listen to, edit, and delete music of your own, search, like, and comment
-on other user’s uploads, follow other users, comment on uploads, and
-finally features continuous play so you may do all of the above seamlessly
-as you explore the site.
+on other user’s uploads, comment on uploads, and finally features
+continuous play so you may do all of the above seamlessly as you explore
+the site.
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login

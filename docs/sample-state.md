@@ -6,8 +6,8 @@ const state = {
 			id: 4,
 			username: “PhoenixD”
 			profile_picture_url: “image_url…”
-		}
-	},
+		}//currentUser
+	},//session
 	songs: {
 		1: {
 			id: 9,
@@ -18,7 +18,7 @@ const state = {
 			image_url: “image_url…”,
 			likes: 890000
 		}//song
-	}//nowPlaying
+	},//songs
 	comments: {
 		1: {
 			id: 34,
