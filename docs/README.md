@@ -18,15 +18,18 @@ as you explore the site.
 - [ ] Followers
 
 ## Design Docs
+
 * [React Components][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 * [Sample State][sample-state]
 
 [components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
 [api-endpoints]: docs/api-endpoints.md
 [schema]: docs/schema.md
+[sample-state]: docs/sample-state.md
+
+
 
 ## Implementation Timeline
 
