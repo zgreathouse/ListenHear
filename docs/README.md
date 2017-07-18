@@ -32,7 +32,6 @@ the site.
 [sample-state]: sample-state.md
 
 
-
 ## Implementation Timeline
 
 ### Phase 1: Set up Backend skeleton and frontend Authentication (2 days)
