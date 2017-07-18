@@ -4,7 +4,7 @@
 
 ### Root
 
-- `GET /`
+- `GET /` :Home Page Show
 
 ## JSON API
 
@@ -18,7 +18,7 @@
 - `POST /api/session` :Sign In
 - `DELETE /api/session` :Sign Out
 
-### Uploads
+### Songs
 
 - `GET /api/songs` :song index
 - `POST /api/songs` :upload song
@@ -28,6 +28,6 @@
 
 ### Comments
 
-- `GET /api/comments` :show comment
+- `GET /api/comments` :show comments for a song
 - `POST /api/comments` :comment on a song
-- `DELETE /api/comment/:id` :remove a comment
+- `DELETE /api/comment/:id` :delete comment based on ID

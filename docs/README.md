@@ -23,24 +23,24 @@ as you explore the site.
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[components]: ./component-hierarchy.md
-[sample-state]: ./sample-state.md
-[api-endpoints]: ./api-endpoints.md
-[schema]: ./schema.md
+[components]: docs/component-hierarchy.md
+[sample-state]: docs/sample-state.md
+[api-endpoints]: docs/api-endpoints.md
+[schema]: docs/schema.md
 
 ## Implementation Timeline
 
 ### Phase 1: Set up Backend skeleton and frontend Authentication (2 days)
 **Objective:** Functioning rails project with frontend authentication, find songs to seed DB with
 
-### Phase 2: Uploads (3 days)
-**Objective:** Upload/ song belong to users and CRUD made possible through API
+### Phase 2: Upload Songs (3 days)
+**Objective:** Upload/ song belong to users and CRUD made possible through API, seed DB with songs
 
-### Phase 3: Commenting and Liking Uploads (3 days)
-**Objective:** Allow for users to comment and like other uploads, components included
+### Phase 3: SongPlayer (3 days)
+**Objective:** Create SongPlayer widget which allows for continuous play
 
-### Phase 4: Follows (3 day)
-**Objective:** Allow users to follow other users, user-profile and side bar components included
+### Phase 4: Commenting and Liking Songs (2 days)
+**Objective:** Allow for users to comment and like other songs, components included
 
-### Phase 5: SongPlayer (3 day)
-**Objective:** Create SongPlayer widget and allow for continuous play
+### Phase 5: User Pages (3 days)
+**Objective:** Profile pages for users, components included

@@ -9,13 +9,6 @@ password_digest     | string        |  not null,
 session_token       | string        |  not null, unique
 profile_picture_url | string        |
 
-## Follows (join table between users)
-column name         |  data type    |  details
---------------------|---------------|---------------------
-Id                  | integer       |  not null, primary key
-follower_id         | integer       |  not null, foreign key
-followed_id         | integer       |  not null, foreign key
-
 ## Songs
 column name         |  data type    |  details
 --------------------|---------------|---------------------
@@ -43,3 +36,12 @@ column name         |  data type    |  details
 Id                  | integer       | not null, primary key
 user_id             | integer       | not null, foreign key
 song_id             | integer       | not null, foreign key
+
+## Bonus
+
+## Follows (join table between users)
+column name         |  data type    |  details
+--------------------|---------------|---------------------
+Id                  | integer       |  not null, primary key
+follower_id         | integer       |  not null, foreign key
+followed_id         | integer       |  not null, foreign key
