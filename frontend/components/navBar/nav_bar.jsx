@@ -32,11 +32,8 @@ const signedInNavBar = (currentUser, signout) => (
       <h2 className="nav-logo" >ListenHere</h2>
     </hgroup>
     <hgroup className="header-group-2">
-      &nbsp;
-      &nbsp;
-      <h3 className="username">{currentUser.username}</h3>
-      &nbsp;
-      &nbsp;
+      <button className="update-button">Upload</button>
+      <button className="username">{currentUser.username}</button>
       <button className="signout-button" onClick={signout}>Sign Out</button>
   	</hgroup>
   </nav>

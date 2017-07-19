@@ -33,42 +33,52 @@ html, div, form, input, nav, hgroup, h1, h2, h3, button {
   font-weight: lighter;
 }
 
-.header-group-2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 30px;
-  height: 37px;
-}
-
 .header-name {
   height: 10px;
-}
-
-.signout-button {
-  background-color: transparent;
-  font-size: 12px;
-  color: white;
-  height: 37px;
-  width: 100px;
-  font-weight: lighter;
 }
 
 .nav-logo {
   margin: 0;
   padding-left: 20px;
   padding-right: 20px;
-  height: 37px;
+  height: 40px;
   align: center;
 }
 
-.username {
-  margin: 0;
-  font-weight: lighter;
-  border-radius: 5px;
-  height: 25px;
+.header-group-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  height: 40px;
+}
+
+.update-button {
+  background-color: #f50;
+  font-size: 12px;
   color: white;
+  height: 40px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+.username {
+  background-color: transparent;
+  font-size: 12px;
+  color: white;
+  height: 40px;
+  width: 220px;
+  font-weight: lighter;
+}
+
+.signout-button {
+  background-color: transparent;
+  font-size: 12px;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-weight: lighter;
 }
 
 /*********************************************/
@@ -89,6 +99,7 @@ html, div, form, input, nav, hgroup, h1, h2, h3, button {
   margin-top: 30px;
   margin-left: 50px;
   color: white;
+  font-size: 28px;
 }
 
 .signin-signup-buttons {
