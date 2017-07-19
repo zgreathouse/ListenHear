@@ -13,80 +13,172 @@
  *= require_tree .
  *= require_self
  */
-html, div, form, input, nav, hgroup, h1, h2, button {
-  font-style: sans-serif;
+ @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+
+html, div, form, input, nav, hgroup, h1, h2, h3, button {
+  font-family: 'ropa-sans', sans-serif;
 }
 
 /*********************************************/
  /*personal-greeting*/
- .header-group {
-   border: blue solid 5px;
- }
+.nav-bar {
+  background-color: #333333;
+  width: 100%
+}
 
- /*.header.name {
-   color: green;
- }*/
+.header-group-1 {
+  float: left;
+  color: white;
+  background-color: #f50;
+  font-weight: lighter;
+}
 
- .header-button {
-   border: purple solid 5px;
- }
+.header-group-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  height: 37px;
+}
+
+.header-name {
+  height: 10px;
+}
+
+.signout-button {
+  background-color: transparent;
+  font-size: 12px;
+  color: white;
+  height: 37px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+.nav-logo {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 37px;
+  align: center;
+}
+
+.username {
+  margin: 0;
+  font-weight: lighter;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+}
+
 /*********************************************/
 /*session-links (nav bar)*/
-
-
 .signin-signup {
-  border: darkorange solid 1px;
+  border: #f50 solid 1px;
   height: 450px;
   background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg) 0 0/cover no-repeat;
 }
 
 .listen-here-logo {
   float: left;
-  margin-top: 40px;
-  margin-left: 60px;
+  color: black;
+  font: sans-serif;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-left: 50px;
+  color: white;
 }
 
 .signin-signup-buttons {
   display: flex;
-  margin-top: 40px;
-  margin-right: 60px;
+  margin-top: 30px;
+  margin-right: 50px;
   float: right;
 }
 
+.signin-button {
+  background-color: transparent;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  width: 120px;
+  font-weight: lighter;
+}
+
+.signup-button {
+  background-color: #f50;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  width: 120px;
+  font-weight: lighter;
+}
+
+.welcome-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: White;
+  padding-left: 100px;
+  padding-top: 115px;
+
+}
+
+.welcome {
+  font-size: 45px;
+  text-align: center;
+}
+
+.message {
+  font-size: 22px;
+  text-align: center;
+  font-weight: lighter;
+}
 /*********************************************/
 /*sign in form/ Modal*/
 .auth-form-title {
 
 }
 
- .signin-form-container {
-   /*border: red solid 5px;*/
-   height: 410px;
- }
-
- .signin-form-box {
-   /*border: grey solid 5px;*/
-   height: 380px;
- }
-
- .signin-form {
-   /*border: yellow solid 5px;*/
-   height: 350px;
- }
-
- .signin-input {
-   /*border: black solid 5px;*/
-   width: 320px;
-   height: 30px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
- }
-
-.modal-close-button {
-  margin-right: 500px;
+.signin-form-container {
+/*border: red solid 5px;*/
+height: 410px;
 }
 
+.signin-form-box {
+/*border: grey solid 5px;*/
+height: 380px;
+padding-top: 50px;
+}
+
+.signin-form {
+/*border: yellow solid 5px;*/
+height: 350px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
+font-style: sans-serif;
+}
+
+.signin-input {
+/*border: black solid 5px;*/
+width: 320px;
+height: 30px;
+}
+
+.submit-button {
+  width: 260px;
+  height: 40px;
+  /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+  background: #f50;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: lighter;
+}
 /*********************************************/
-    /* <Link to="/signin"><button>Sign In</button></Link> */

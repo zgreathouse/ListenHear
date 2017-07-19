@@ -64,6 +64,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="signin-form-box">
           <br/>
           <div className="signin-form">
+            <h1 className="listen-here-logo">ListenHere</h1>
             <br/>
             <label>
               <input type="text"
@@ -86,6 +87,7 @@ class SessionForm extends React.Component {
 
             {this.renderErrors()}
             <input
+              className='submit-button'
               type="submit"
               value={this.props.formType === 'signin' ? "Sign In" : "Create Account"} />
           </div>

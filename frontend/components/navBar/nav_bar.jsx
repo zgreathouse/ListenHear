@@ -5,9 +5,7 @@ import AuthModal from '../modals/auth_modal';
 const signedOutNavBar = () => (
   <header className="signin-signup">
     <nav className="listen-here-logo">
-      <Link to="/">
-        <button>ListenHere</button>
-      </Link>
+      <h2 className="logo">ListenHere</h2>
     </nav>
 
     <nav className="signin-signup-buttons">
@@ -16,14 +14,32 @@ const signedOutNavBar = () => (
       &nbsp;
       <AuthModal formType="signup"/>
     </nav>
+
+    <div className="welcome-message">
+      <div>
+      <p className="welcome">Connect on ListenHere</p>
+      <p className="message">
+        Discover, stream, and share a constantly expanding mix of music <br/>
+            from emerging and major artists around the world</p>
+      </div>
+    </div>
   </header>
 );
 
 const signedInNavBar = (currentUser, signout) => (
-	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <button className="header-button" onClick={signout}>Sign Out</button>
-	</hgroup>
+  <nav className="nav-bar">
+    <hgroup className="header-group-1">
+      <h2 className="nav-logo" >ListenHere</h2>
+    </hgroup>
+    <hgroup className="header-group-2">
+      &nbsp;
+      &nbsp;
+      <h3 className="username">{currentUser.username}</h3>
+      &nbsp;
+      &nbsp;
+      <button className="signout-button" onClick={signout}>Sign Out</button>
+  	</hgroup>
+  </nav>
 );
 
 const NavBar = ({ currentUser, signout }) => (
@@ -31,13 +47,3 @@ const NavBar = ({ currentUser, signout }) => (
 );
 
 export default NavBar;
-// &nbsp;
-// <AuthModal formType="signin"/>
-// &nbsp;
-// <AuthModal formType="signup"/>
-
-
-// &nbsp;
-// <Link to="/signin"><button>Sign In</button></Link>
-// &nbsp;
-// <Link to="/signup"><button>Create Account</button></Link>

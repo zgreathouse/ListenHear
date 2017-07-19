@@ -6,14 +6,14 @@ import SessionFormSignUpContainer from '../session_form/session_form_signup_cont
 
 const customStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    width                 : '400px',
-    height                : '450px',
+    top              : '50%',
+    left             : '50%',
+    right            : 'auto',
+    bottom           : 'auto',
+    marginRight      : '-50%',
+    transform        : 'translate(-50%, -50%)',
+    width            : '400px',
+    height           : '450px',
   }
 };
 
@@ -49,7 +49,7 @@ class AuthModal extends React.Component {
       <div>
         {this.props.formType === "signup" ?
           <div>
-          <button onClick={this.openModal}>Create Account</button>
+          <button onClick={this.openModal} className='signup-button'>Create Account</button>
             <Modal
               isOpen={this.state.modalIsOpen}
               // onAfterOpen={this.afterOpenModal}
@@ -61,7 +61,7 @@ class AuthModal extends React.Component {
               <SessionFormSignUpContainer formType={formType}/>
             </Modal>
           </div> : <div>
-            <button onClick={this.openModal}>Sign In</button>
+            <button onClick={this.openModal} className='signin-button'>Sign In</button>
               <Modal
                 isOpen={this.state.modalIsOpen}
                 // onAfterOpen={this.afterOpenModal}
