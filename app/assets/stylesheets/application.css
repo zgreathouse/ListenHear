@@ -13,3 +13,80 @@
  *= require_tree .
  *= require_self
  */
+html, div, form, input, nav, hgroup, h1, h2, button {
+  font-style: sans-serif;
+}
+
+/*********************************************/
+ /*personal-greeting*/
+ .header-group {
+   border: blue solid 5px;
+ }
+
+ /*.header.name {
+   color: green;
+ }*/
+
+ .header-button {
+   border: purple solid 5px;
+ }
+/*********************************************/
+/*session-links (nav bar)*/
+
+
+.signin-signup {
+  border: darkorange solid 1px;
+  height: 450px;
+  background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg) 0 0/cover no-repeat;
+}
+
+.listen-here-logo {
+  float: left;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.signin-signup-buttons {
+  display: flex;
+  margin-top: 40px;
+  margin-right: 60px;
+  float: right;
+}
+
+/*********************************************/
+/*sign in form/ Modal*/
+.auth-form-title {
+
+}
+
+ .signin-form-container {
+   /*border: red solid 5px;*/
+   height: 410px;
+ }
+
+ .signin-form-box {
+   /*border: grey solid 5px;*/
+   height: 380px;
+ }
+
+ .signin-form {
+   /*border: yellow solid 5px;*/
+   height: 350px;
+ }
+
+ .signin-input {
+   /*border: black solid 5px;*/
+   width: 320px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
+.modal-close-button {
+  margin-right: 500px;
+}
+
+/*********************************************/
+    /* <Link to="/signin"><button>Sign In</button></Link> */

@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       username: '',
       password: ''
@@ -31,9 +32,17 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'signin') {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link to="/signup">Create Account</Link>;
     } else {
-      return <Link to="/signin">sign in instead</Link>;
+      return <Link to="/signin">Sign In</Link>;
+    }
+  }
+
+  submitButtonText() {
+    if (this.props.formType === 'signin') {
+      return "Sign In";
+    } else {
+      return "Create Account";
     }
   }
 
@@ -41,9 +50,9 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <ul key={`error-${i}`} className='errors'>
             {error}
-          </li>
+          </ul>
         ))}
       </ul>
     );
@@ -54,27 +63,31 @@ class SessionForm extends React.Component {
       <div className="signin-form-container">
         <form onSubmit={this.handleSubmit} className="signin-form-box">
           <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
           <div className="signin-form">
             <br/>
-            <label>Username:
+            <label>
               <input type="text"
+                placeholder="username"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signin-input"
               />
             </label>
             <br/>
-            <label>Password:
+            <label>
               <input type="password"
+                placeholder="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="signin-input"
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
+
+            {this.renderErrors()}
+            <input
+              type="submit"
+              value={this.props.formType === 'signin' ? "Sign In" : "Create Account"} />
           </div>
         </form>
       </div>

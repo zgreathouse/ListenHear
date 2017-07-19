@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-
 import { signin, signout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
+import {link, withRouter} from 'react-router-dom';
 
 
 const mapStateToProps = ({ session }) => {
@@ -12,7 +12,7 @@ const mapStateToProps = ({ session }) => {
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
+  const formType = 'signin';
   const processForm = (formType === 'signin') ? signin : signup;
   return {
     processForm: user => dispatch(processForm(user)),
