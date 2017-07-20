@@ -206,4 +206,8 @@ font-style: sans-serif;
   font-weight: lighter;
 }
 
+.errors {
+  text-align: center;
+}
+
 /*********************************************/

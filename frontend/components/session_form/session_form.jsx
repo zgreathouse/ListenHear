@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       username: '',
       password: ''
@@ -59,13 +58,13 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.clearErrors();
+    return this.props.clearErrors();
   }
 
   render() {
     return (
       <div className="signin-form-container">
-        <form onSubmit={this.handleSubmit} className="signin-form-box">
+        <form onSubmit={ this.handleSubmit } className="signin-form-box">
           <br/>
           <div className="signin-form">
             <h1 className="listen-here-logo">ListenHere</h1>
@@ -73,8 +72,8 @@ class SessionForm extends React.Component {
             <label>
               <input type="text"
                 placeholder="username"
-                value={this.state.username}
-                onChange={this.update('username')}
+                value={ this.state.username }
+                onChange={ this.update('username') }
                 className="signin-input"
               />
             </label>
@@ -82,17 +81,17 @@ class SessionForm extends React.Component {
             <label>
               <input type="password"
                 placeholder="password"
-                value={this.state.password}
-                onChange={this.update('password')}
+                value={ this.state.password }
+                onChange={ this.update('password') }
                 className="signin-input"
               />
             </label>
             <br/>
-            {this.renderErrors()}
+            <label className="errors">{ this.renderErrors() }</label>
             <input
               className='submit-button'
               type="submit"
-              value={this.props.formType === 'signin' ? "Sign In" : "Create Account"} />
+              value={ this.props.formType === 'signin' ? "Sign In" : "Create Account" } />
           </div>
 
         </form>

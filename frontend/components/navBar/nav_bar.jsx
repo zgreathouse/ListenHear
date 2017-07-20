@@ -13,8 +13,9 @@ const signedOutNavBar = (signin) => (
     <nav className="listen-here-logo">
       <h2 className="logo">ListenHear</h2>
     </nav>
+
     <nav className="signin-signup-buttons">
-      <button className="guest" onClick={(e) => demoSignIn(signin, e)}>Guest</button>
+      <button className="guest" onClick={ (e) => demoSignIn(signin, e) }>Guest</button>
       &nbsp;
       <AuthModal formType="signin"/>
       &nbsp;
@@ -45,9 +46,8 @@ const signedInNavBar = (currentUser, signout) => (
   </nav>
 );
 
-const NavBar = ({ currentUser, signout, signin }) => {
-  const user = {username: "guest", password: "password"};
-  return currentUser ? signedInNavBar(currentUser, signout) : signedOutNavBar(signin)
-}
+const NavBar = ({ currentUser, signout, signin }) => (
+  currentUser ? signedInNavBar(currentUser, signout) : signedOutNavBar(signin)
+);
 
 export default NavBar;

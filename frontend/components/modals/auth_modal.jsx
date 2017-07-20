@@ -57,7 +57,7 @@ class AuthModal extends React.Component {
               style={customStyles}
               contentLabel="Example Modal"
             >
-              <button onClick={this.closeModal}>X</button>
+              <button onClick={this.closeModal}> X </button>
               <SessionFormSignUpContainer formType={formType}/>
             </Modal>
           </div> : <div>
@@ -69,7 +69,7 @@ class AuthModal extends React.Component {
                 style={customStyles}
                 contentLabel="Example Modal"
               >
-                <button onClick={this.closeModal}>X</button>
+                <button onClick={this.closeModal}> X </button>
                 <SessionFormSignInContainer formType={formType}/>
               </Modal>
           </div>}

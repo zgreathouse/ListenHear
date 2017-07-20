@@ -11,13 +11,13 @@ const mapStateToProps = ({ session }) => {
   }
 };
 
-const mapDispatchToProps = (dispatch, { location }) => {
+const mapDispatchToProps = (dispatch) => {
   const formType = 'signup';
   const processForm = (formType === 'signup') ? signup : signin;
   return {
     processForm: user => dispatch(processForm(user)),
-    formType,
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    formType
   };
 };
 

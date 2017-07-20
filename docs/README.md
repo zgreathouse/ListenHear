@@ -1,10 +1,10 @@
-# ListenHere
+# ListenHear
 
 ## Minimum Viable Product
 
 A faithful clone to soundcloud.com. This sight allows you to upload,
 listen to, edit, and delete music of your own, search, like, and comment
-on other user’s uploads, comment on uploads, and finally features
+on other user’s uploads, and finally features
 continuous play so you may do all of the above seamlessly as you explore
 the site.
 
