@@ -58,12 +58,11 @@ class SessionForm extends React.Component {
     );
   }
 
-  
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
 
   render() {
-    // const demoUser = {user: {username:"guest", password:"password"}};
-    // const { demoLogin } = this.props;
-
     return (
       <div className="signin-form-container">
         <form onSubmit={this.handleSubmit} className="signin-form-box">
@@ -94,9 +93,6 @@ class SessionForm extends React.Component {
               className='submit-button'
               type="submit"
               value={this.props.formType === 'signin' ? "Sign In" : "Create Account"} />
-
-            {/* <br/>
-            <button className="demo" onClick={demoUser.demosignin}>Guest</button> */}
           </div>
 
         </form>

@@ -11,23 +11,22 @@ const demoSignIn = (signin, e) => {
 const signedOutNavBar = (signin) => (
   <header className="signin-signup">
     <nav className="listen-here-logo">
-      <h2 className="logo">ListenHere</h2>
+      <h2 className="logo">ListenHear</h2>
     </nav>
-    <button className="guest" onClick={(e) => demoSignIn(signin, e)}>Guest</button>
     <nav className="signin-signup-buttons">
+      <button className="guest" onClick={(e) => demoSignIn(signin, e)}>Guest</button>
       &nbsp;
       <AuthModal formType="signin"/>
-      &nbsp;
       &nbsp;
       <AuthModal formType="signup"/>
     </nav>
 
     <div className="welcome-message">
       <div>
-      <p className="welcome">Connect on ListenHere</p>
+      <p className="welcome">Connect on ListenHear</p>
       <p className="message">
-        Discover, stream, and share a constantly expanding mix of music <br/>
-            from emerging and major artists around the world</p>
+        Discover, stream, and share a constantly expanding <br/>mix of music
+            from emerging and major <br/>artists around the world</p>
       </div>
     </div>
   </header>
