@@ -125,7 +125,7 @@ html, div, form, input, nav, hgroup, h1, h2, h3, button {
   color: white;
   border-radius: 5px;
   height: 40px;
-  width: 120px;
+  width: 180px;
   font-weight: lighter;
 }
 
@@ -178,8 +178,8 @@ font-style: sans-serif;
 
 .signin-input {
 /*border: black solid 5px;*/
-width: 320px;
-height: 30px;
+  width: 350px;
+  height: 40px;
 }
 
 .submit-button {
@@ -187,6 +187,17 @@ height: 30px;
   height: 40px;
   /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
   background: #f50;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: lighter;
+}
+
+.guest {
+  width: 100px;
+  height: 40px;
+  /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+  background: transparent;
   color: white;
   font-size: 14px;
   border-radius: 8px;

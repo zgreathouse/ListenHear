@@ -1,16 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AuthModal from '../modals/auth_modal';
 
-const signedOutNavBar = () => (
+const demoSignIn = (signin, e) => {
+  e.preventDefault();
+  const demoUser = {username: 'guest', password: 'password'};
+  signin({user: demoUser});
+}
+
+const signedOutNavBar = (signin) => (
   <header className="signin-signup">
     <nav className="listen-here-logo">
       <h2 className="logo">ListenHere</h2>
     </nav>
-
+    <button className="guest" onClick={(e) => demoSignIn(signin, e)}>Guest</button>
     <nav className="signin-signup-buttons">
       &nbsp;
       <AuthModal formType="signin"/>
+      &nbsp;
       &nbsp;
       <AuthModal formType="signup"/>
     </nav>
@@ -39,8 +46,9 @@ const signedInNavBar = (currentUser, signout) => (
   </nav>
 );
 
-const NavBar = ({ currentUser, signout }) => (
-  currentUser ? signedInNavBar(currentUser, signout) : signedOutNavBar()
-);
+const NavBar = ({ currentUser, signout, signin }) => {
+  const user = {username: "guest", password: "password"};
+  return currentUser ? signedInNavBar(currentUser, signout) : signedOutNavBar(signin)
+}
 
 export default NavBar;
