@@ -46,10 +46,14 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    if (!this.props.errors) {
+      return null;
+    }
+
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
-          <ul key={`error-${i}`} className='errors'>
+        {this.props.errors.map((error, idx) => (
+          <ul key={`error-${idx}`} className='errors'>
             {error}
           </ul>
         ))}
@@ -70,14 +74,14 @@ class SessionForm extends React.Component {
             <h1 className="listen-here-logo">ListenHere</h1>
             <br/>
             <label>
-              <input type="text"
+              <input autoFocus
+                type="text"
                 placeholder="username"
                 value={ this.state.username }
                 onChange={ this.update('username') }
                 className="signin-input"
               />
-            </label>
-            <br/>
+            </label> <br/>
             <label>
               <input type="password"
                 placeholder="password"
@@ -85,15 +89,13 @@ class SessionForm extends React.Component {
                 onChange={ this.update('password') }
                 className="signin-input"
               />
-            </label>
-            <br/>
+            </label> <br/>
             <label className="errors">{ this.renderErrors() }</label>
             <input
               className='submit-button'
               type="submit"
               value={ this.props.formType === 'signin' ? "Sign In" : "Create Account" } />
           </div>
-
         </form>
       </div>
     );

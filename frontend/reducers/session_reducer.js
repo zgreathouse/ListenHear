@@ -13,6 +13,7 @@ const SessionReducer = (state = nullUser, action) => {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, nullUser, { currentUser });
+
     case RECEIVE_ERRORS:
       const errors = action.errors;
       return merge({}, nullUser, { errors });
@@ -20,9 +21,6 @@ const SessionReducer = (state = nullUser, action) => {
     case CLEAR_ERRORS:
       const emptiedErrors = [];
       return merge({}, {currentUser: state.currentUser}, { errors: emptiedErrors });
-      /*Clear errors case is setting the user to have
-        nullUser state*/
-
     default:
       return state;
   }

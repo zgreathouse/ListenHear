@@ -1,3 +1,195 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*********************************************/
+
+
+
+/*********************************************/
+ /*Nav-Bar*/
+.nav-bar {
+  background-color: #333333;
+  width: 100%
+}
+
+.header-group-1 {
+  float: left;
+  color: white;
+  background-color: #f50;
+  font-weight: lighter;
+}
+
+.header-name {
+  height: 10px;
+}
+
+.nav-logo {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  align: center;
+}
+
+.header-group-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  height: 40px;
+}
+
+.update-button {
+  background-color: #f50;
+  font-size: 12px;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+.username {
+  background-color: transparent;
+  font-size: 12px;
+  color: white;
+  height: 40px;
+  width: 220px;
+  font-weight: lighter;
+}
+
+.signout-button {
+  background-color: transparent;
+  font-size: 12px;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+/*********************************************/
+/*Splash Page*/
+.signin-signup {
+  border: #f50 solid 1px;
+  height: 450px;
+  background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg) 0 0/cover no-repeat;
+  margin-right: 80px;
+  margin-left: 80px;
+  border-top: #f50 solid 7px;
+  margin-top: -6px;
+}
+
+.listen-here-logo {
+  float: left;
+  color: black;
+  font: sans-serif;
+}
+
+.logo {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: white;
+  font-size: 28px;
+}
+
+.signin-signup-buttons {
+  display: flex;
+  margin-top: 30px;
+  margin-right: 30px;
+  float: right;
+}
+
+.guest {
+  background-color: transparent;
+  font-size: 14px;
+  color: white;
+  border-radius: 2px;
+  height: 30px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+.signin-button {
+  background-color: transparent;
+  font-size: 14px;
+  color: white;
+  border-radius: 2px;
+  height: 30px;
+  width: 100px;
+  font-weight: lighter;
+}
+
+.signup-button {
+  background-color: #f50;
+  font-size: 14px;
+  color: white;
+  border-radius: 2px;
+  height: 30px;
+  width: 160px;
+  font-weight: lighter;
+}
+
+.welcome-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: White;
+  padding-left: 270px;
+  padding-top: 160px;
+}
+
+.welcome {
+  font-size: 36px;
+  text-align: center;
+}
+
+.message {
+  font-size: 18px;
+  text-align: center;
+  font-weight: lighter;
+}
+/*********************************************/
+/*Modal*/
+.auth-form-title {
+
+}
+
+.signin-form-container {
+  height: 410px;
+}
+
+.signin-form-box {
+  height: 380px;
+  padding-top: 50px;
+}
+
+.signin-form {
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-style: sans-serif;
+}
+
+.signin-input {
+  width: 350px;
+  height: 40px;
+}
+
+.submit-button {
+  width: 260px;
+  height: 40px;
+  /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+  background: #f50;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: lighter;
+}
+
+.errors {
+  text-align: center;
+}
+
+/*********************************************/
