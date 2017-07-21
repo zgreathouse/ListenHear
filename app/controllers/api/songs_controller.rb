@@ -25,7 +25,7 @@ class Api::SongsController < ApplicationController
 
   def destroy
     if Song.delete(params[:id])
-     render :index
+     render :delete
     else
      render json: @song.errors, status: :unprocessable_entity
     end

@@ -3,7 +3,7 @@ import * as APIUtil from '../util/song_api_util'
 //constants
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
-export const DELETE_SONG = 'DELETE_SONG';
+export const REMOVE_SONG = 'REMOVE_SONG';
 
 //sync actions
 export const receiveSong = song => ({
@@ -11,21 +11,26 @@ export const receiveSong = song => ({
   song
 });
 
-export const receiveSongs = song => ({
+export const receiveSongs = songs => ({
   type: RECEIVE_SONGS,
+  songs
+});
+
+export const removeSong = song => ({
+  type: REMOVE_SONG,
   song
 });
 
 //async actions
-export const fetchSong = song => dispatch => (
-  APIUtil.fetchSong(song).then(song => (
+export const fetchSong = id => dispatch => (
+  APIUtil.fetchSong(id).then(song => (
     dispatch(receiveSong(song))
   ))
 );
 
-export const fetchSongs = user => dispatch => (
-  APIUtil.fetchSongs(user).then(user => (
-    dispatch(receiveCurrentUser(user))
+export const fetchSongs = () => dispatch => (
+  APIUtil.fetchSongs().then(songs => (
+    dispatch(receiveCurrentUser(songs))
   ))
 );
 
@@ -35,8 +40,8 @@ export const createSong = (song) => dispatch => (
   ))
 );
 
-export const deleteSong = () => dispatch => (
-  APIUtil.deleteSong().then(user => (
-    dispatch(receiveSong(null))
+export const deleteSong = id => dispatch => (
+  APIUtil.deleteSong(id).then(song => (
+    dispatch(removeSong(song))
   ))
 );

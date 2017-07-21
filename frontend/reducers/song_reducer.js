@@ -1,25 +1,31 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_SONG, RECEIVE_SONGS, DELETE_SONG } from '../actions/song_actions';
+import { RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG } from '../actions/song_actions';
 
 const defaultState = () => ({
-  entities: {},
+  songs: {},
   currentSong: null,
 })
 
 const SongReducer = (state = defaultState(), action) => {
   Object.freeze(state);
+  let newState;
 
   switch (action.type) {
     case RECEIVE_SONG:
       const song = action.song;
       return merge({}, state, {
-        entities: { [song.id]: song },
+        songs: { [song.id]: song },
         currentsong: song.id
       });
 
     case RECEIVE_SONGS:
-      return merge({}, state, { entities: action.song });
+      return merge({}, state, { songs: action.song });
+
+    case REMOVE_SONG:
+      newState = Object.assign({}, state);
+      delete newState.songs[action.id];
+      return newState;
 
     default:
       return state;
