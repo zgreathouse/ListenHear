@@ -6,7 +6,7 @@ class Api::SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-    @song.user_id = current_user.id
+    @song.artist_id = current_user.id
 
     if @song.save
      render :show
@@ -24,8 +24,8 @@ class Api::SongsController < ApplicationController
   # end
 
   def destroy
-    if @song.destroy
-     render :destroy
+    if Song.delete(params[:id])
+     render :index
     else
      render json: @song.errors, status: :unprocessable_entity
     end
@@ -33,6 +33,6 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title, :genre, :song_url, :image_url, :description)
+    params.require(:song).permit(:title, :genre, :song_url, :image_url)
   end
 end

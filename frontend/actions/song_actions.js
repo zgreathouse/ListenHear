@@ -16,23 +16,23 @@ export const receiveSongs = song => ({
   song
 });
 
-export const deleteSong = errors => ({
-  type: DELETE_SONG,
-  errors
-});
-
-
 //async actions
 export const fetchSong = song => dispatch => (
   APIUtil.fetchSong(song).then(song => (
     dispatch(receiveSong(song))
-  )
+  ))
 );
 
 export const fetchSongs = user => dispatch => (
   APIUtil.fetchSongs(user).then(user => (
     dispatch(receiveCurrentUser(user))
-  )
+  ))
+);
+
+export const createSong = (song) => dispatch => (
+  APIUtil.createSong(song).then(song => (
+    dispatch(receiveSong(song))
+  ))
 );
 
 export const deleteSong = () => dispatch => (

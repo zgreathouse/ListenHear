@@ -1,10 +1,10 @@
 class Api::SessionsController < ApplicationController
 
   def create
-  @user = User.find_by_credentials(
-    params[:user][:username],
-    params[:user][:password]
-  )
+    @user = User.find_by_credentials(
+      params[:user][:username],
+      params[:user][:password]
+    )
 
     if @user
       sign_in(@user)
@@ -21,10 +21,10 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       sign_out
-      render "api/users/show"
+      render :new
     else
       render(
-        json: ["Nobody signed in"],
+        json: ["You're not signed in!"],
         status: 404
       )
     end

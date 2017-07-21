@@ -12,7 +12,7 @@ const SongReducer = (state = defaultState(), action) => {
 
   switch (action.type) {
     case RECEIVE_SONG:
-      const song = action.payload.song;
+      const song = action.song;
       return merge({}, state, {
         entities: { [song.id]: song },
         currentsong: song.id
@@ -21,10 +21,6 @@ const SongReducer = (state = defaultState(), action) => {
     case RECEIVE_SONGS:
       return merge({}, state, { entities: action.song });
 
-    /* TODO
-    case DELETE_SONG:
-    */
-    
     default:
       return state;
   }

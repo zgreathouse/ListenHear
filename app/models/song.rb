@@ -1,5 +1,4 @@
 class Song < ApplicationRecord
-  # TODO mode-level validations
   validates :title, :genre, :artist_id, :song_url, :image_url, presence: true
 
   belongs_to :user,
