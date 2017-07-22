@@ -1,24 +1,28 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react';
+import { withRouter } from 'react-router';
+import SongIndexItem from './songs_index_item';
 
 
-class SongsIndex extends Component {
-  componentDidMount() {
+class SongIndex extends React.Component {
+
+  componentDidMount(){
     this.props.fetchSongs();
   }
 
   render() {
     const { songs } = this.props;
+
     return (
-      <section className="all-songs">
-        <ul>
-          <SongIndexItem />
+      <div>
+        <ul className="all-songs">
+          {songs.map(song => <SongIndexItem key={song.id} songs={song} />)}
         </ul>
+      </div>
 
 
-      </section>
     );
   }
 }
 
-export default SongsIndex;
+
+export default SongIndex;

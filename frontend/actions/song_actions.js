@@ -30,7 +30,7 @@ export const fetchSong = id => dispatch => (
 
 export const fetchSongs = () => dispatch => (
   APIUtil.fetchSongs().then(songs => (
-    dispatch(receiveCurrentUser(songs))
+    dispatch(receiveSongs(songs))
   ))
 );
 
