@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SongIndex from './songs_index';
+import RootPageIndex from './root_page_index';
 import { fetchSongs, fetchSong } from '../../actions/song_actions';
 import { selectAllSongs } from '../../reducers/selector';
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SongIndex);
+)(RootPageIndex);

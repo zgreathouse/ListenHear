@@ -7,7 +7,7 @@ class SongIndexItem extends React.Component {
 
     return (
       <li className="song-index-item">
-        <img className="song-image" height="100" width="100" src={song.avatar} alt="cover-photo" />
+        <img className="song-image" height="100" width="100" src={song.image} alt="cover-photo" />
       </li>
     );
   }

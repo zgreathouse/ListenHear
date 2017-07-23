@@ -24,5 +24,4 @@ class SongIndex extends React.Component {
   }
 }
 
-
 export default SongIndex;
