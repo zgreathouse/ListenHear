@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class SongIndexItem extends React.Component {
   render() {
@@ -7,7 +7,7 @@ class SongIndexItem extends React.Component {
 
     return (
       <div className='all-song-items'>
-        <li>{ song.title }</li>
+        <li className='song-item'>{ song.title }</li>
       </div>
 
     );

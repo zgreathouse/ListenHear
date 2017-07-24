@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // const store2 = configureStore();
   // window.getState = store2.getState;
   // window.dispatch = store2.dispatch;
-  window.selectAllSongs = selectAllSongs;
+  // window.selectAllSongs = selectAllSongs;
 
 
   if (window.currentUser) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.getState = store.getState;
+  // window.getState = store.getState;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -71,8 +71,10 @@ class SessionForm extends React.Component {
         <form onSubmit={ this.handleSubmit } className="signin-form-box">
           <br/>
           <div className="signin-form">
+
             <h1 className="listen-here-logo">ListenHere</h1>
             <br/>
+
             <label>
               <input autoFocus
                 type="text"
@@ -82,6 +84,7 @@ class SessionForm extends React.Component {
                 className="signin-input"
               />
             </label> <br/>
+
             <label>
               <input type="password"
                 placeholder="password"
@@ -90,7 +93,9 @@ class SessionForm extends React.Component {
                 className="signin-input"
               />
             </label> <br/>
+
             <label className="errors">{ this.renderErrors() }</label>
+
             <input
               className='submit-button'
               type="submit"

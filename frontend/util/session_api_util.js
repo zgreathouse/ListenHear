@@ -1,7 +1,4 @@
-import {
-  receiveCurrentUser,
-  receiveErrors
-} from '../actions/session_actions';
+import {receiveCurrentUser,receiveErrors} from '../actions/session_actions';
 
 export const signin = user => (
   $.ajax({

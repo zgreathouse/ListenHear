@@ -73,37 +73,54 @@ class UploadForm extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className="upload-form">
-        {this.renderErrors()}
         <form className="upload-form-items">
+
+          <div className="upload-header-flex">
+            <h1 className="upload-header">ListenHear</h1>
+          </div>
+
           <div className="upload-form-left">
             {this.state.image_url.length > 0 ? <img height="150" width="150" src={this.state.image_url}
                alt="album-art" /> : <div></div>}
-            <br />
-            <p>Choose Song Image</p>
-            <input className="auth-input" type="file" onChange={this.setImage}/>
+            <br/>
+            <div className="upload-input">
+              <p>Choose Cover Art</p>
+              <input  type="file" onChange={this.setImage}/>
+            </div>
+              <br/>
+            <div className="upload-input">
+              <p>Choose Song</p>
+              <input type="file" onChange={this.setSong}/>
+            </div>
           </div>
+          <br/>
           <div className='upload-form-right'>
-            <input
+
+            <br/>
+            <input autoFocus
                   type="text"
                   value={this.state.title}
                   placeholder="Title"
                   onChange={this.update('title')}
-                  className="auth-input"
+                  className="upload-input-title"
                 />
+            <br/>
             <textarea placeholder="Description"
               value={this.state.description}
               onChange={this.update('description')}
               cols="60" rows="3"
-              className="auth-input"></textarea>
+              className="upload-input-description"></textarea>
+            <br/>
 
-            <p>Choose Song</p>
-              <input className="auth-input" type="file" onChange={this.setSong}/>
-
-            <button className="upload-button" onClick={this.handleSubmit}>Upload</button>
+            <br/>
           </div>
+
+            <div className="upload-button-flex">
+              <button className="upload-button" onClick={this.handleSubmit}>Upload</button>
+            </div>
+
         </form>
       </div>
     );

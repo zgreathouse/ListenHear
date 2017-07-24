@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import UploadFormContainer from '../upload_form/upload_form_container';
 
-
 const customStyles = {
   content : {
     top              : '50%',
@@ -12,7 +11,7 @@ const customStyles = {
     bottom           : 'auto',
     marginRight      : '-50%',
     transform        : 'translate(-50%, -50%)',
-    width            : '600px',
+    width            : '700px',
     height           : '450px',
   }
 };
@@ -48,13 +47,12 @@ class UploadModal extends React.Component {
             onRequestClose={this.closeModal}
             style={customStyles}
             contentLabel="Upload Modal">
-          <UploadFormContainer type={this.props.type}
-                             song={this.props.song}
-                             closeModal={this.closeModal}
-                             user={this.props.id} />
+              <UploadFormContainer type={this.props.type}
+                song={this.props.song}
+                closeModal={this.closeModal}
+                user={this.props.id} />
           </Modal>
         </div>
-
     );
   }
 }

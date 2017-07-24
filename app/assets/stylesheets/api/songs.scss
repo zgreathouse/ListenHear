@@ -32,6 +32,11 @@
   padding-top: 30px;
 }
 
+.song-item {
+  border: 1px solid black;
+  width: 50%;
+}
+
 /********************************************/
 /*upload modal*/
 
@@ -40,22 +45,65 @@
 }
 
 .upload-form-items {
-  height: 350px;
+  // height: 350px;
+  // display: flex;
+  // justify-content: space-around;
+  // flex-direction: column;
+  // font-style: sans-serif;
+}
+
+.upload-header-flex {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  font-style: sans-serif;
+  justify-content: center;
+}
+
+.upload-header {
+  align: center;
 }
 
 .upload-form-left {
-
+  // border: 1px solid black;
+  float: left;
 }
 
 .upload-form-right {
+  // border: 1px solid black;
+  display: flex;
+  align-items: right;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 240px;
+  margin-top: -18px;
+  padding: 20px;
+}
 
+.upload-button-flex {
+  // border: 1px solid black;
+  // margin-left: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 55px;
 }
 
 .upload-button {
+  width: 260px;
+  height: 40px;
+  /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+  background: #f50;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: lighter;
+  align: center;
+}
 
+.upload-input-title {
+  height: 24px;
+  width: 160px;
+}
+
+.upload-input-description {
+  height: 70px;
+  width: 350px;
 }
