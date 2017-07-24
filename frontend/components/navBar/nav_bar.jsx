@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import AuthModal from '../modals/auth_modal';
+import UploadModal from '../modals/upload_modal';
 
 
 const NavBar = ({currentUser, signout}) => (
@@ -9,7 +9,8 @@ const NavBar = ({currentUser, signout}) => (
       <h2 className="nav-logo" >ListenHere</h2>
     </hgroup>
     <hgroup className="header-group-2">
-      <button className="update-button">Upload</button>
+      {/* <button className="update-button">Upload</button> */}
+      <UploadModal className="update-button"/>
       <button className="username">{currentUser.username}</button>
       <button className="signout-button" onClick={signout}>Sign Out</button>
   	</hgroup>

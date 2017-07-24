@@ -2,12 +2,12 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG } from '../actions/song_actions';
 
-const defaultState = () => ({
-  songs: {},
+const initialState = () => ({
+  entities: {},
   currentSong: null,
 })
 
-const SongReducer = (state = defaultState(), action) => {
+const SongReducer = (state = initialState(), action) => {
   Object.freeze(state);
   let newState;
 
@@ -15,16 +15,16 @@ const SongReducer = (state = defaultState(), action) => {
     case RECEIVE_SONG:
       const song = action.song;
       return merge({}, state, {
-        songs: { [song.id]: song },
+        entities: { [song.id]: song },
         currentSong: song.id
       });
 
     case RECEIVE_SONGS:
-      return merge({}, state, { songs: action.song });
+      return merge({}, state, { entities: action.songs });
 
     case REMOVE_SONG:
       newState = Object.assign({}, state);
-      delete newState.songs[action.id];
+      delete newState.entities[action.id];
       return newState;
 
     default:

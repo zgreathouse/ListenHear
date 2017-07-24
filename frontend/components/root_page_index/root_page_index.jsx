@@ -10,10 +10,9 @@ class RootPageIndex extends React.Component {
   render(signin) {
     return (
       <section className="root-page-index">
-        
-
-
-
+        <p className="root-index-header">
+          Hear what’s trending for free in the ListenHear community
+        </p>
       </section>
     );
   }

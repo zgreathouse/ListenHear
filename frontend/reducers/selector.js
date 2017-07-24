@@ -1,3 +1,3 @@
 import values from 'lodash/values';
 
-export const selectAllSongs = state => values(state.songs);
+export const selectAllSongs = state => values(state.songs.entities);

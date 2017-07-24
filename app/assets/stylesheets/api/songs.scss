@@ -1,3 +1,20 @@
 // Place all the styles related to the Api::Songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.root-page-index {
+  height: 600px;
+  margin-left: 80px;
+  margin-right: 80px;
+  background-color: white;
+  margin-top: -23px;
+}
+
+.root-index-header {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+}

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import SongIndexItem from './songs_index_item';
 
 
+
 class SongIndex extends React.Component {
 
   componentDidMount(){
@@ -11,11 +12,12 @@ class SongIndex extends React.Component {
 
   render() {
     const { songs } = this.props;
+    const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} />));
 
     return (
       <div>
         <ul className="all-songs">
-          {songs.map(song => <SongIndexItem key={song.id} songs={song} />)}
+          { allSongs }
         </ul>
       </div>
 
