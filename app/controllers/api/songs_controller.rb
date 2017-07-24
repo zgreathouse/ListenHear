@@ -11,6 +11,7 @@ class Api::SongsController < ApplicationController
     if @song.save
      render :show
     else
+      debugger
      render json: @song.errors, status: :unprocessable_entity
     end
   end
@@ -34,6 +35,6 @@ class Api::SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title, :genre, :song_url, :image_url)
+params.require(:song).permit(:title, :genre, :description, :artist_id, :track, :avatar)
   end
 end

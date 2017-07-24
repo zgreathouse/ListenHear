@@ -8,10 +8,10 @@ class UploadForm extends React.Component {
     this.state = {
       title: '',
       description: '',
-      image: '',
+      avatar: '',
       image_url: '',
       track: '',
-      user_id: this.props.id};
+      artist_id: this.props.id};
     if (this.props.song) {
       this.state = this.props.song;
     }
@@ -39,7 +39,7 @@ class UploadForm extends React.Component {
     const file = e.currentTarget.files[0];
     var fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ image: file, image_url: fileReader.result });
+      this.setState({ avatar: file, image_url: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -63,9 +63,10 @@ class UploadForm extends React.Component {
     var formData = new FormData();
     formData.append("song[title]", this.state.title);
     formData.append("song[description]", this.state.description);
-    formData.append("song[user_id]", this.state.user_id);
-    formData.append("song[image]", this.state.image || this.state.image_url);
+    formData.append("song[artist_id]", this.state.artist_id);
+    formData.append("song[avatar]", this.state.avatar || this.state.image_url);
     formData.append("song[track]", this.state.track);
+    formData.append("song[genre]", this.state.genre);
 
     this.props.createSong(formData).then(data => {
       this.props.history.push(`/songs/${data.song.id}`);
@@ -87,12 +88,12 @@ class UploadForm extends React.Component {
             <br/>
             <div className="upload-input">
               <p>Choose Cover Art</p>
-              <input  type="file" onChange={this.setImage}/>
+              <input className="choose_file_buttons" type="file" onChange={this.setImage}/>
             </div>
               <br/>
             <div className="upload-input">
               <p>Choose Song</p>
-              <input type="file" onChange={this.setSong}/>
+              <input className="choose_file_buttons" type="file" onChange={this.setSong}/>
             </div>
           </div>
           <br/>
@@ -104,7 +105,15 @@ class UploadForm extends React.Component {
                   value={this.state.title}
                   placeholder="Title"
                   onChange={this.update('title')}
-                  className="upload-input-title"
+                  className="upload-input"
+                />
+            <br/>
+            <input
+                  type="text"
+                  value={this.state.genre}
+                  placeholder="Genre"
+                  onChange={this.update('genre')}
+                  className="upload-input"
                 />
             <br/>
             <textarea placeholder="Description"

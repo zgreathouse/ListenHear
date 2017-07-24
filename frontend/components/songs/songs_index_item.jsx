@@ -7,7 +7,10 @@ class SongIndexItem extends React.Component {
 
     return (
       <div className='all-song-items'>
-        <li className='song-item'>{ song.title }</li>
+        <li className='song-item'>
+          <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />
+          { song.title }
+        </li>
       </div>
 
     );
@@ -27,3 +30,6 @@ export default SongIndexItem;
 //     <li className="song-username">{ song.user.username }</li>
 //   </ul>
 // </li></Link>
+
+
+//

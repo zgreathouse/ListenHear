@@ -5,15 +5,15 @@ import configureStore from './store/store';
 import Modal from 'react-modal';
 import { selectAllSongs } from './reducers/selector'
 
+import {deleteSong} from './util/song_api_util';
+
+window.deleteSong = deleteSong;
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-
-
-  // const store2 = configureStore();
-  // window.getState = store2.getState;
-  // window.dispatch = store2.dispatch;
-  // window.selectAllSongs = selectAllSongs;
-
 
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  // window.getState = store.getState;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
