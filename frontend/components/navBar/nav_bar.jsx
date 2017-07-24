@@ -12,6 +12,7 @@ const NavBar = ({currentUser, signout}) => (
 
       <hgroup className="header-group-2">
         <UploadModal className="update-button"/>
+        {/* <img className="nav-profile-image" src={currentUser.image_url} alt="cover-photo" /> */}
         <button className="username">{currentUser.username}</button>
         <button className="signout-button" onClick={signout}>Sign Out</button>
     	</hgroup>
