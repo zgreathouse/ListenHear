@@ -6,14 +6,12 @@ class SongIndexItem extends React.Component {
     const { song } = this.props;
 
     return (
-      <div className='overall-song-index-item'>
+      <div className='all-song-items'>
         <li>{ song.title }</li>
       </div>
 
     );
   }
-
-
 }
 
 export default SongIndexItem;

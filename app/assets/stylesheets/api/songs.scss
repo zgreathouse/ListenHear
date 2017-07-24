@@ -18,3 +18,44 @@
   margin-bottom: 30px;
   font-weight: lighter;
 }
+
+.all-songs {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+}
+
+.all-song-items {
+  padding-top: 30px;
+}
+
+/********************************************/
+/*upload modal*/
+
+.upload-form {
+
+}
+
+.upload-form-items {
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-style: sans-serif;
+}
+
+.upload-form-left {
+
+}
+
+.upload-form-right {
+
+}
+
+.upload-button {
+
+}

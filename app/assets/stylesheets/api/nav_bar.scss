@@ -1,0 +1,66 @@
+/*Nav-Bar*/
+.nav {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.nav-bar {
+ background-color: #333333;
+ width: 100%;
+}
+
+.header-group-1 {
+ float: left;
+ color: white;
+ background-color: #f50;
+ font-weight: lighter;
+}
+
+.header-name {
+ height: 10px;
+}
+
+.nav-logo {
+ margin: 0;
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-top: 5px;
+ height: 35px;
+ align: center;
+}
+
+.header-group-2 {
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ align-items: center;
+ // padding-right: 15px;
+ height: 40px;
+}
+
+.update-button {
+ background-color: #f50;
+ font-size: 12px;
+ color: white;
+ height: 40px;
+ width: 100px;
+ font-weight: lighter;
+}
+
+.username {
+ background-color: transparent;
+ font-size: 12px;
+ color: white;
+ height: 40px;
+ width: 220px;
+ font-weight: lighter;
+}
+
+.signout-button {
+ background-color: transparent;
+ font-size: 12px;
+ color: white;
+ height: 40px;
+ width: 100px;
+ font-weight: lighter;
+}

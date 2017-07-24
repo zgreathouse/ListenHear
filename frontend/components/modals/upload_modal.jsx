@@ -42,7 +42,7 @@ class UploadModal extends React.Component {
     return (
 
         <div>
-          <button className="auth-buts" onClick={this.openModal}>Upload a Song</button>
+          <button className="update-button" onClick={this.openModal}>Upload</button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}

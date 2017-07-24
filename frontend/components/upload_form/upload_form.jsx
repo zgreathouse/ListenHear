@@ -78,14 +78,14 @@ class UploadForm extends React.Component {
       <div className="upload-form">
         {this.renderErrors()}
         <form className="upload-form-items">
-          <div className="form">
+          <div className="upload-form-left">
             {this.state.image_url.length > 0 ? <img height="150" width="150" src={this.state.image_url}
                alt="album-art" /> : <div></div>}
             <br />
             <p>Choose Song Image</p>
             <input className="auth-input" type="file" onChange={this.setImage}/>
           </div>
-          <div className='song-form-right'>
+          <div className='upload-form-right'>
             <input
                   type="text"
                   value={this.state.title}
@@ -102,7 +102,7 @@ class UploadForm extends React.Component {
             <p>Choose Song</p>
               <input className="auth-input" type="file" onChange={this.setSong}/>
 
-            <button className="form-buts" onClick={this.handleSubmit}>Upload</button>
+            <button className="upload-button" onClick={this.handleSubmit}>Upload</button>
           </div>
         </form>
       </div>
