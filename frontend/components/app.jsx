@@ -7,7 +7,6 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import AuthModal from './modals/auth_modal';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 // '/'
@@ -27,6 +26,7 @@ const App = () => (
         <AuthRoute exact path='/' component={RootPageIndex} />
         <ProtectedRoute exact path='/home' component={NavBarContainer} />
         <ProtectedRoute exact path='/home' component={SongIndexContainer} />
+
       </switch>
   </div>
 );

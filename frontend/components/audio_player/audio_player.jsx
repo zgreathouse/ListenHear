@@ -5,8 +5,11 @@ class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
 
-
+    this.handlePlayClick = this.handlePlayClick.bind(this);
+    this.handlePauseClick = this.handlePauseClick.bind(this);
+    this.handleMuteClick = this.handleMuteClick.bind(this);
   }
+
 
   getHowler () {
     this.player.howler
@@ -28,7 +31,7 @@ class AudioPlayer extends React.Component {
   render () {
     return (
       <ReactHowler
-        
+
       />
     )
   }
@@ -38,8 +41,7 @@ export default AudioPlayer;
 
 
 /*
-Props that
-
+Props
 
 prop	      default	  description
 src		                The sources to the track(s) to be loaded for the sound (URLs or base64 data URIs). These should be in order of preference, howler.js will automatically load the first one that is compatible with the current browser. If your files have no extensions, you will need to explicitly specify the extension using the format property.

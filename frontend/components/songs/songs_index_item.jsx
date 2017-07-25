@@ -10,6 +10,7 @@ class SongIndexItem extends React.Component {
         <li className='song-item'>
           <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />
           { song.title }
+          {/* <p>{ song.genre }</p> */}
         </li>
       </div>
 
@@ -19,8 +20,6 @@ class SongIndexItem extends React.Component {
 
 export default SongIndexItem;
 
-
-//
 // <Link to={`/songs/${song.id}`}><li className="song-index-item">
 //   <Link to={`/songs/${song.id}`}>
 //     <img className="song-index-image" height="100" width="100" src={song.title} alt="cover-photo" />
