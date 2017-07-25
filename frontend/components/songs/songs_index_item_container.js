@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SongIndex from './songs_index';
+import SongIndexItem from './songs_index_item';
 import { fetchSongs, fetchSong } from '../../actions/song_actions';
 import { assignCurrentSong } from '../../actions/audio_player_actions';
 import { selectAllSongs } from '../../reducers/selector';
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SongIndex);
+)(SongIndexItem);

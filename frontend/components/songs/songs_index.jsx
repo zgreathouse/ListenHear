@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import SongIndexItem from './songs_index_item';
+import SongIndexItemContainer from './songs_index_item_container';
 
 
 
@@ -12,7 +12,7 @@ class SongIndex extends React.Component {
 
   render() {
     const { songs } = this.props;
-    const allSongs = songs.map((song, id) => (<SongIndexItem key={`song-${id}`} song={song} />));
+    const allSongs = songs.map((song, idx) => (<SongIndexItemContainer key={`song-${idx}`} song={song} />));
 
     return (
       <div className="all-songs">

@@ -5,34 +5,49 @@ class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {playing: props.playing, mute: false};
+
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handlePauseClick = this.handlePauseClick.bind(this);
     this.handleMuteClick = this.handleMuteClick.bind(this);
   }
 
-
-  getHowler () {
-    this.player.howler
+  handlePlayClick () {
+    this.props.playAudioPlayer();
   }
 
-  getDuration () {
-    this.player.duration()
+  handlePauseClick() {
+    this.props.pauseAudioPlayer();
   }
 
-  getSeek () {
-    this.player.seek()
+  handleMuteClick() {
+    if(this.state.mute){
+      this.setState({mute: false});
+    }else{
+      this.setState({mute: true});
+    }
   }
-
-  setSeek () {
-    this.player.seek(0.5)
-  }
-
 
   render () {
     return (
-      <ReactHowler
+      <div>
+        {this.props.currentSong !== null ?
+          <ReactHowler
+            src={this.props.songs[this.props.currentSong].song_url}
+            playing={this.props.playing}
+            html5={true}
+          /> : <div></div> }
 
-      />
+        <div>
+          {this.props.playing === false ?
+            <div>
+              <button onClick={this.handlePlayClick}>Play</button>
+            </div> : <div>
+              <button onClick={this.handlePauseClick}>Pause</button>
+            </div>
+          }
+        </div>
+      </div>
     )
   }
 }
@@ -63,3 +78,19 @@ onLoadError	noop	    Called when an error occurs whilst attempting to load media
 onEnd	      noop	    Called when media finishes playing
 
 */
+
+// getHowler () {
+//   this.player.howler
+// }
+//
+// getDuration () {
+//   this.player.duration()
+// }
+//
+// getSeek () {
+//   this.player.seek()
+// }
+//
+// setSeek () {
+//   this.player.seek(0.5)
+// }

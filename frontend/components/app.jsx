@@ -15,7 +15,7 @@ import RootPageIndex from './root_page_index/root_page_index_container';
 // '/home'
 import NavBarContainer from './navBar/nav_bar_container';
 import SongIndexContainer from './songs/songs_index_container';
-
+import AudioPlayerContainer from './audio_player/audio_player_container';
 
 
 
@@ -26,8 +26,8 @@ const App = () => (
         <AuthRoute exact path='/' component={RootPageIndex} />
         <ProtectedRoute exact path='/home' component={NavBarContainer} />
         <ProtectedRoute exact path='/home' component={SongIndexContainer} />
-
       </switch>
+      <AudioPlayerContainer />
   </div>
 );
 

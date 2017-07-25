@@ -3,8 +3,7 @@ import merge from 'lodash/merge';
 import { RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG } from '../actions/song_actions';
 
 const initialState = () => ({
-  entities: {},
-  currentSong: null,
+  entities: {}
 })
 
 const SongReducer = (state = initialState(), action) => {
@@ -15,8 +14,7 @@ const SongReducer = (state = initialState(), action) => {
     case RECEIVE_SONG:
       const song = action.song;
       return merge({}, state, {
-        entities: { [song.id]: song },
-        currentSong: song.id
+        entities: { [song.id]: song }
       });
 
     case RECEIVE_SONGS:

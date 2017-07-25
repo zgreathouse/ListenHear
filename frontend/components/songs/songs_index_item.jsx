@@ -1,7 +1,17 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 class SongIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleAssignCurrentSong = this.handleAssignCurrentSong.bind(this);
+  }
+
+  handleAssignCurrentSong () {
+    const { song } = this.props;
+    this.props.assignCurrentSong(song.id);
+  }
+
   render() {
     const { song } = this.props;
 
@@ -10,7 +20,7 @@ class SongIndexItem extends React.Component {
         <li className='song-item'>
           <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />
           { song.title }
-          {/* <p>{ song.genre }</p> */}
+          <button onClick={this.handleAssignCurrentSong}>Play</button>
         </li>
       </div>
 
