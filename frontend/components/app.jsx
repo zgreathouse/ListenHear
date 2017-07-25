@@ -27,7 +27,7 @@ const App = () => (
         <ProtectedRoute exact path='/home' component={NavBarContainer} />
         <ProtectedRoute exact path='/home' component={SongIndexContainer} />
       </switch>
-      <AudioPlayerContainer />
+      <ProtectedRoute path='/' component={AudioPlayerContainer} />
   </div>
 );
 

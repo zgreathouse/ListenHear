@@ -30,23 +30,25 @@ class AudioPlayer extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="audio-footer-flex">
         {this.props.currentSong !== null ?
-          <ReactHowler
-            src={this.props.songs[this.props.currentSong].song_url}
-            playing={this.props.playing}
-            html5={true}
-          /> : <div></div> }
+          <footer className="audio-footer">
+              <ReactHowler
+                src={this.props.songs[this.props.currentSong].song_url}
+                playing={this.props.playing}
+                html5={true}
+              />
 
-        <div>
-          {this.props.playing === false ?
             <div>
-              <button onClick={this.handlePlayClick}>Play</button>
-            </div> : <div>
-              <button onClick={this.handlePauseClick}>Pause</button>
+              {this.props.playing === false ?
+                <div>
+                  <button onClick={this.handlePlayClick}>Play</button>
+                </div> : <div>
+                  <button onClick={this.handlePauseClick}>Pause</button>
+                </div>
+              }
             </div>
-          }
-        </div>
+          </footer> : <div></div> }
       </div>
     )
   }

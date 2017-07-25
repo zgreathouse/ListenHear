@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import SongIndexItem from './songs_index_item';
 import { fetchSongs, fetchSong } from '../../actions/song_actions';
-import { assignCurrentSong } from '../../actions/audio_player_actions';
+import { assignCurrentSong, playAudioPlayer, pauseAudioPlayer } from '../../actions/audio_player_actions';
 import { selectAllSongs } from '../../reducers/selector';
 
 const mapStateToProps = state => ({
-  songs: selectAllSongs(state)
+  songs: selectAllSongs(state),
+  playing: state.audioPlayer.playing,
+  currentSong: state.audioPlayer.currentSong
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchSongs: (songs) => dispatch(fetchSongs({ songs })),
   fetchSong: (song) => dispatch(fetchSong({ song })),
-  assignCurrentSong: (id) => dispatch(assignCurrentSong(id))
+  assignCurrentSong: (id) => dispatch(assignCurrentSong(id)),
+  playAudioPlayer: () => dispatch(playAudioPlayer()),
+  pauseAudioPlayer: () => dispatch(pauseAudioPlayer())
 });
 
 export default connect(

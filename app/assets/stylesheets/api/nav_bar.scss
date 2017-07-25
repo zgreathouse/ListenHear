@@ -27,6 +27,8 @@
  padding-top: 5px;
  height: 35px;
  align: center;
+ font-size: 25px;
+ font-weight: bold;
 }
 
 .header-group-2 {
@@ -34,7 +36,6 @@
  flex-direction: row;
  justify-content: flex-end;
  align-items: center;
- // padding-right: 15px;
  height: 40px;
 }
 
@@ -45,6 +46,7 @@
  height: 40px;
  width: 100px;
  font-weight: lighter;
+ text-align: center;
 }
 
 .username {
@@ -54,6 +56,7 @@
  height: 40px;
  width: 220px;
  font-weight: lighter;
+ text-align: center;
 }
 
 .signout-button {
@@ -63,4 +66,5 @@
  height: 40px;
  width: 100px;
  font-weight: lighter;
+ text-align: center;
 }

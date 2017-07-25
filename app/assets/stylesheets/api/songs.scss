@@ -31,11 +31,82 @@
   padding-top: 30px;
 }
 
+.song-image {
+  float: left;
+}
+
 .song-item {
   border: 1px solid black;
   width: 65%;
+  height: 148px;
 }
 
+.play-and-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.song-play-button {
+  float:left;
+  margin-left: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.play-button {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pause-button {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.artist-title {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.song-item-artist {
+  font-size: 12px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.song-item-title {
+  font-size: 18px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  width: 150px;
+}
+
+.song-item-genre-flex {
+  display: flex;
+  justify-content: flex-end;
+  width: 380px;
+  margin-top: 10px;
+}
+
+.song-item-genre {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  padding: 0 7px;
+  background: #999;
+  border: 1px solid #999;
+  border-left-width: 0;
+  color: #fff;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 20px;
+}
 /********************************************/
 /*upload modal*/
 
@@ -86,11 +157,9 @@
 }
 
 .choose_file_buttons {
-  width: 77px;
-  border: 1px solid #f50;
+  width: 170px;
   border-radius: 6px;
   font-weight: lighter;
-  align: center;
 }
 
 .upload-button {
@@ -112,4 +181,13 @@
 .upload-input-description {
   height: 70px;
   width: 350px;
+}
+
+/********************************************/
+
+.audio-footer-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
