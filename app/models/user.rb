@@ -16,6 +16,8 @@ class User < ApplicationRecord
 		class_name: "Song",
 		primary_key: :id,
 		foreign_key: :artist_id
+		
+	has_many :comments
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

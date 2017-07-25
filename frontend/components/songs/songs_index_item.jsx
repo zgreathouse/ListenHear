@@ -33,15 +33,19 @@ class SongIndexItem extends React.Component {
           <div className="song-play-button">
             {!this.props.playing || this.props.currentSong !== song.id ?
               <div>
-                <img className="play-button"
-                  onClick={this.handleAssignCurrentSong}
-                  src="https://lh3.googleusercontent.com/puM-xku2myy_25xZvMwnx_1Qd_0vH-zavm0Fz73nHElIioMYt7Rh12GYD-GU2bHpiiM=w300">
-                </img>
+                <div className="button-box">
+                  <img className="play-button"
+                    onClick={this.handleAssignCurrentSong}
+                    src="https://lh3.googleusercontent.com/puM-xku2myy_25xZvMwnx_1Qd_0vH-zavm0Fz73nHElIioMYt7Rh12GYD-GU2bHpiiM=w300">
+                  </img>
+                </div>
               </div> : <div>
-                <img className="pause-button"
-                  onClick={this.handlePauseClick}
-                  src="https://www.r-m-n.com/image/img/skin/jrAudioPro/button_player_pause.png">
-                </img>
+                <div className="button-box">
+                  <img className="pause-button"
+                    onClick={this.handlePauseClick}
+                    src="https://www.r-m-n.com/image/img/skin/jrAudioPro/button_player_pause.png">
+                  </img>
+                </div>
               </div>
             }
           </div>

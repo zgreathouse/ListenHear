@@ -5,11 +5,10 @@ class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {playing: props.playing, mute: false};
+    this.state = { playing: props.playing };
 
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handlePauseClick = this.handlePauseClick.bind(this);
-    this.handleMuteClick = this.handleMuteClick.bind(this);
   }
 
   handlePlayClick () {
@@ -20,41 +19,51 @@ class AudioPlayer extends React.Component {
     this.props.pauseAudioPlayer();
   }
 
-  handleMuteClick() {
-    if(this.state.mute){
-      this.setState({mute: false});
-    }else{
-      this.setState({mute: true});
-    }
-  }
-
   render () {
     return (
-      <div className="audio-footer-flex">
+      <footer>
         {this.props.currentSong !== null ?
-          <footer className="audio-footer">
+          <div className="audio-footer">
               <ReactHowler
                 src={this.props.songs[this.props.currentSong].song_url}
                 playing={this.props.playing}
                 html5={true}
               />
 
-            <div>
+            <div className="audio-footer-flex">
               {this.props.playing === false ?
-                <div>
-                  <button onClick={this.handlePlayClick}>Play</button>
-                </div> : <div>
-                  <button onClick={this.handlePauseClick}>Pause</button>
+                <div className="audio-footer-play-button">
+                  <img className="play-button"
+                    onClick={this.handlePlayClick}
+                    src="https://lh3.googleusercontent.com/puM-xku2myy_25xZvMwnx_1Qd_0vH-zavm0Fz73nHElIioMYt7Rh12GYD-GU2bHpiiM=w300">
+                  </img>
+                </div> : <div className="audio-footer-play-button">
+                  <img className="pause-button"
+                    onClick={this.handlePauseClick}
+                    src="https://www.r-m-n.com/image/img/skin/jrAudioPro/button_player_pause.png">
+                  </img>
                 </div>
               }
+              &nbsp;
+              &nbsp;
+              <div className="footer-artist-title">
+                <div className="footer-song-item-artist">
+                  { this.props.songs[this.props.currentSong].user.username }
+                </div>
+                <div className="footer-song-item-title">
+                  { this.props.songs[this.props.currentSong].title }
+                </div>
+              </div>
             </div>
-          </footer> : <div></div> }
-      </div>
+          </div> : <div></div> }
+      </footer>
     )
   }
 }
 
 export default AudioPlayer;
+
+
 
 
 /*

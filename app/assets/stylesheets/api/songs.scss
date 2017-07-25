@@ -31,14 +31,19 @@
   padding-top: 30px;
 }
 
+.song-index-header {
+  font-size: 26px;
+  margin-left: 80px;
+}
+
 .song-image {
   float: left;
 }
 
 .song-item {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   width: 65%;
-  height: 148px;
+  height: 180px;
 }
 
 .play-and-details {
@@ -53,18 +58,22 @@
   cursor: pointer;
 }
 
+.button-box {
+  width: 50px;
+  height: 50px;
+}
+
 .play-button {
   height: 50px;
   width: 50px;
-  text-align: center;
-  font-size: 14px;
+
 }
 
 .pause-button {
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  font-size: 14px;
+  height: 44px;
+  width: 44px;
+  padding-left: 3px;
+  padding-top: 3px;
 }
 
 .artist-title {
@@ -91,19 +100,14 @@
 }
 
 .song-item-genre {
-  position: relative;
-  display: inline-block;
   height: 20px;
   padding: 0 7px;
   background: #999;
   border: 1px solid #999;
-  border-left-width: 0;
   color: #fff;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  font-weight: 100;
   font-size: 14px;
   line-height: 20px;
-  white-space: nowrap;
   cursor: pointer;
   border-radius: 20px;
 }
@@ -187,7 +191,16 @@
 
 .audio-footer-flex {
   width: 100%;
+  height:50px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background-color: #EEE;
+  border-top: 1px solid #CCC;
+}
+
+.audio-footer-play-button {
+  margin-left: 20px;
 }

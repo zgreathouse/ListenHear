@@ -16,6 +16,7 @@ class SongIndex extends React.Component {
 
     return (
       <div className="all-songs">
+        <p className="song-index-header">Stream</p>
         <ul>
           { allSongs }
         </ul>
