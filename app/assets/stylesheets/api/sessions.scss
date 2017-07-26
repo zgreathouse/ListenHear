@@ -34,14 +34,22 @@
   text-align: center;
 }
 
+.guest-flex {
+  display: flex;
+  justify-content: center;
+}
+
 .guest {
   background-color: transparent;
   font-size: 14px;
   color: white;
   border-radius: 2px;
   height: 30px;
-  width: 100px;
+  width: 170px;
   font-weight: lighter;
+  &:hover {
+    background-color: #f50;
+  }
 }
 
 .signin-button {
@@ -52,6 +60,10 @@
   height: 30px;
   width: 100px;
   font-weight: lighter;
+  cursor: pointer;
+  &:hover {
+    background-color: #f50;
+  }
 }
 
 .signup-button {
@@ -62,6 +74,10 @@
   height: 30px;
   width: 160px;
   font-weight: lighter;
+  cursor: pointer;
+  &:hover {
+
+  }
 }
 
 .welcome-message {
@@ -69,8 +85,8 @@
   justify-content: center;
   align-items: center;
   color: white;
-  padding-left: 229px;
-  padding-top: 160px;
+  width: 100%;
+  padding-top: 80px;
 }
 
 .welcome {

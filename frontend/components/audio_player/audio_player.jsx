@@ -33,12 +33,12 @@ class AudioPlayer extends React.Component {
             <div className="audio-footer-flex">
               {this.props.playing === false ?
                 <div className="audio-footer-play-button">
-                  <img className="play-button"
+                  <img className="footer-play-button"
                     onClick={this.handlePlayClick}
                     src="https://lh3.googleusercontent.com/puM-xku2myy_25xZvMwnx_1Qd_0vH-zavm0Fz73nHElIioMYt7Rh12GYD-GU2bHpiiM=w300">
                   </img>
                 </div> : <div className="audio-footer-play-button">
-                  <img className="pause-button"
+                  <img className="footer-pause-button"
                     onClick={this.handlePauseClick}
                     src="https://www.r-m-n.com/image/img/skin/jrAudioPro/button_player_pause.png">
                   </img>

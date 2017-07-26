@@ -5,7 +5,7 @@ class Song < ApplicationRecord
     class_name: "User",
     primary_key: :id,
     foreign_key: :artist_id
-    
+
   has_many :comments
 
   has_attached_file :avatar,  presence: true, url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'zach-listenhear-dev'
@@ -16,12 +16,8 @@ class Song < ApplicationRecord
   validates_attachment_content_type :track, content_type: /\Aaudio\/.*\z/
   validates_with AttachmentSizeValidator, attributes: :track, less_than: 40.megabytes
 
+  
 end
 
-
-
-
-
-
-#for default images:
-  #style: { medium: "300x300>", thumb: "100x100>"}, default_url: "default_avatar.jpg",
+# for default images:
+#   style: { medium: "300x300>", thumb: "100x100>"}, default_url: "default_avatar.jpg"

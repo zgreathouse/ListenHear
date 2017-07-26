@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import AuthModal from '../modals/auth_modal';
+import RootPageIndexContainer from '../root_page_index/root_page_index_container';
 
 
 class SplashPage extends React.Component {
@@ -12,19 +13,19 @@ class SplashPage extends React.Component {
 
   demoSignIn(signin, e) {
     e.preventDefault();
-    const demoUser = {username: 'guest', password: 'password'};
+    const demoUser = {username: 'guest', password: 'password1'};
     this.props.signin({user: demoUser});
   }
 
   render(signin) {
     return (
-      <header className="signin-signup">
+      <section className="signin-signup">
         <nav className="listen-here-logo">
           <h2 className="logo">ListenHear</h2>
         </nav>
 
         <nav className="signin-signup-buttons">
-          <button className="guest" onClick={ (e) => this.demoSignIn(signin, e) }>Guest</button>
+          <button className="guest" onClick={ (e) => this.demoSignIn(signin, e) }>Continue as Guest</button>
           &nbsp;
           <AuthModal formType="signin"/>
           &nbsp;
@@ -39,7 +40,11 @@ class SplashPage extends React.Component {
                 from emerging and major <br/>artists around the world</p>
           </div>
         </div>
-      </header>
+
+        <section className="root-page-index">
+          <RootPageIndexContainer/>
+        </section>
+      </section>
     );
   }
 }

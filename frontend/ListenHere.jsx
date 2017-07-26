@@ -5,13 +5,6 @@ import configureStore from './store/store';
 import Modal from 'react-modal';
 import { selectAllSongs } from './reducers/selector'
 
-import {deleteSong} from './util/song_api_util';
-
-window.deleteSong = deleteSong;
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 

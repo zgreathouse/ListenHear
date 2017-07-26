@@ -90,7 +90,10 @@ class UploadForm extends React.Component {
               <p>Choose Cover Art</p>
               <input className="choose_file_buttons" type="file" onChange={this.setImage}/>
             </div>
-              <br/>
+
+            <br/>
+            <br/>
+
             <div className="upload-input">
               <p>Choose Song</p>
               <input className="choose_file_buttons" type="file" onChange={this.setSong}/>

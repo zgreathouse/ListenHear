@@ -21,8 +21,6 @@ class SongIndex extends React.Component {
           { allSongs }
         </ul>
       </div>
-
-
     );
   }
 }

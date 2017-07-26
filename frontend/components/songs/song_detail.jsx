@@ -1,16 +1,23 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import SongIndexItem from './songs_index_item';
 
 class SongDetail extends React.Component {
 
   componentDidMount(){
-    this.props.fetchSong();
+    this.props.fetchSong(this.props.match.params.songId);
   }
 
   render() {
-    return (
+    // console.log(this.props);
 
+    const { song } = this.props;
+    if (!song) {
+      return null
+    }
+    return (
+      <section className="song-details">
+        <h2>{song.title}</h2>
+      </section>
     );
   }
 }

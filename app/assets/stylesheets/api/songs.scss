@@ -34,6 +34,8 @@
 .song-index-header {
   font-size: 26px;
   margin-left: 80px;
+  margin-top: 90px;
+  color: #333;
 }
 
 .song-image {
@@ -41,14 +43,15 @@
 }
 
 .song-item {
-  border-bottom: 1px solid black;
+  border-bottom: .5px solid lightgrey;
   width: 65%;
-  height: 180px;
+  height: 170px;
 }
 
 .play-and-details {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .song-play-button {
@@ -92,12 +95,16 @@
   width: 150px;
 }
 
-.song-item-genre-flex {
-  display: flex;
-  justify-content: flex-end;
-  width: 380px;
-  margin-top: 10px;
+.song-item-left {
+  width: 300px;
 }
+
+// .song-item-genre-flex {
+//   display: flex;
+//   justify-content: flex-end;
+//   width: 380px;
+//   margin-top: 10px;
+// }
 
 .song-item-genre {
   height: 20px;
@@ -108,8 +115,9 @@
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   font-size: 14px;
   line-height: 20px;
-  cursor: pointer;
   border-radius: 20px;
+  position: absolute;
+  right: 70px;
 }
 /********************************************/
 /*upload modal*/
@@ -129,10 +137,14 @@
 .upload-header-flex {
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #DDD;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .upload-header {
   align: center;
+  color: #333;
 }
 
 .upload-form-left {
@@ -157,13 +169,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 55px;
+  margin-top: 25px;
 }
 
 .choose_file_buttons {
   width: 170px;
   border-radius: 6px;
-  font-weight: lighter;
+  // font-weight: lighter;
 }
 
 .upload-button {
@@ -203,4 +215,20 @@
 
 .audio-footer-play-button {
   margin-left: 20px;
+  width: 45px;
+}
+
+.footer-song-item-artist {
+  font-size: 12px;
+}
+
+.footer-play-button {
+  width: 42px;
+  height: 42px;
+}
+
+.footer-pause-button {
+  width: 38px;
+  height: 38px;
+  padding-right: 7px;
 }

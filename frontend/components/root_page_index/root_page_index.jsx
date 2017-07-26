@@ -13,8 +13,6 @@ class RootPageIndex extends React.Component {
         <p className="root-index-header">
           Hear what’s trending for free in the ListenHear community
         </p>
-
-        {/* <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" /> */}
       </section>
     );
   }

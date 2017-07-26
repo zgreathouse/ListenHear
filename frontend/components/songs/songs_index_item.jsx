@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class SongIndexItem extends React.Component {
   constructor(props) {
@@ -25,11 +27,14 @@ class SongIndexItem extends React.Component {
 
   render() {
     const { song } = this.props;
-    // debugger
+    if (!song) {
+      return null;
+    }
     return (
       <div className='all-song-items'>
         <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />
         <li className='song-item'>
+
           <div className="song-play-button">
             {!this.props.playing || this.props.currentSong !== song.id ?
               <div>
@@ -51,14 +56,15 @@ class SongIndexItem extends React.Component {
           </div>
           <section className="play-and-details">
             <div className="artist-title">
-              <div className="song-item-artist">{ song.user.username }</div>
-              <div className="song-item-title">{ song.title }</div>
-            </div>
-            &nbsp;
-            <div className="song-item-genre-flex">
-              <div className="song-item-genre">{ song.genre }</div>
+              { song.user ?
+              <div className="song-item-artist">{ song.user.username }
+              </div> : <div></div>
+              }
+              <Link to={`/songs/${song.id}`} className="song-item-title" >{ song.title }</Link>
             </div>
 
+            &nbsp;
+            <div className="song-item-genre">{ song.genre }</div>
           </section>
           <br/>
           <br/>

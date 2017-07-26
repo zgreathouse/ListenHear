@@ -7,10 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :songs, except: [:new, :edit]
     resources :comments, except: [:new, :edit, :update]
-
+    get 'song/:id/comments', to: 'comments#song_comments'
   end
 
 end
-
-
-# get 'song/:id/comments', to: 'comments#song_comments'

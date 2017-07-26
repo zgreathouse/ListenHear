@@ -11,6 +11,9 @@ const NavBar = ({currentUser, signout}) => (
       </hgroup>
 
       <hgroup className="header-group-2">
+        <div>
+          <Link to="/home" className="nav-home-link">Home</Link>
+        </div>
         <UploadModal className="update-button"/>
         {/* <img className="nav-profile-image" src={currentUser.image_url} alt="cover-photo" /> */}
         <button className="username">{currentUser.username}</button>
