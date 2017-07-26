@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import merge from 'lodash/merge';
+import CommentIndexItemContainer from './comment_index_item_container'
 
 class CommentsIndex extends React.Component {
   constructor(props) {
@@ -50,36 +51,28 @@ class CommentsIndex extends React.Component {
 
 
   render(){
-    const { comments, errors } = this.props;
-    let trash;
+    const { comments } = this.props;
+    let allComments = comments.map((comment, idx) => (
+      <CommentIndexItemContainer key={`comment-${idx}`} comment={comment} />
+    ));
 
-    let allComments = comments.map((comment, idx) => {
-      return <li className='comment-item' key={idx}>
-        <div>
-          <Link to={`/user/${comment.user_id}`}>
-            <h4>{comment.user_username}</h4>
-          </Link>
-        </div>
-        <div className='comment-info'>
-          {comment.body}<br/>
-        <span>{comment.time} ago&nbsp;</span>
-        </div>
-        </li>;
-    });
     if (allComments.length === 0) {
       allComments = <div>No comments...<br/></div>;
     }
-    debugger
+
     return(
       <div className="comment-form-container">
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <input className="comment-input"
-            value={this.state.body}
-            onChange={this.setBody}
-            placeholder="Write a Comment" />
-          <input className='comment-submit' type='submit' value='Submit' />
-        </form>
+        <div className="comment-form">
+          <form onSubmit={this.handleSubmit}>
+              <input className="comment-input"
+                value={this.state.body}
+                onChange={this.setBody}
+                placeholder="Write a Comment" />
+              <input className='comment-submit' type='submit' value='Submit' />
+              <br/>
+              {this.renderErrors()}
+          </form>
+        </div>
         <br/>
         <br/>
         <ul className='comment-list'>

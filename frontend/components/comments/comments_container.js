@@ -6,12 +6,13 @@ import { createComment,
          clearComments,
          clearCommentErrors } from '../../actions/comment_actions';
 import CommentsIndex from './comments_index';
+import { withRouter } from 'react-router';
 
-
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, props) => ({
     comments: allCommentsBySong(state),
     errors: state.comments.errors,
-    songId: ownProps.songId
+    song: state.songs.song,
+    songId: props.songId
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -21,7 +22,7 @@ const mapDispatchToProps = dispatch => ({
   clearCommentErrors: () => dispatch(clearCommentErrors())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(CommentsIndex);
+)(CommentsIndex));

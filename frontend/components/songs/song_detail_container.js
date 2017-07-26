@@ -5,11 +5,16 @@ import { selectAllSongs } from '../../reducers/selector';
 
 const mapStateToProps = (state, { match }) => ({
   song: state.songs.entities[match.params.songId],
+  playing: state.audioPlayer.playing,
+  currentSong: state.audioPlayer.currentSong
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchSongs: (songs) => dispatch(fetchSongs({ songs })),
-  fetchSong: (id) => dispatch(fetchSong(id))
+  fetchSong: (id) => dispatch(fetchSong(id)),
+  assignCurrentSong: (id) => dispatch(assignCurrentSong(id)),
+  playAudioPlayer: () => dispatch(playAudioPlayer()),
+  pauseAudioPlayer: () => dispatch(pauseAudioPlayer())
 });
 
 export default connect(

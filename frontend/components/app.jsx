@@ -28,7 +28,6 @@ const App = () => (
       <ProtectedRoute path='/songs/:songId' component={SongDetailContainer} />
       <ProtectedRoute path='/home' component={SongIndexContainer} />
       <AuthRoute path='/' component={SplashPageContainer} />
-      {/* <AuthRoute path='/' component={RootPageIndex} /> */}
     </Switch>
     <ProtectedRoute path='/' component={AudioPlayerContainer} />
   </div>

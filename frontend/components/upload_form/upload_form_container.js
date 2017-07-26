@@ -5,11 +5,11 @@ import UploadForm from './upload_form';
 import { createSong, updateSong } from '../../actions/song_actions';
 
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, props) => ({
   id: state.session.currentUser.id
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch, props) => ({
   createSong: song => dispatch(createSong(song)),
   updateSong: (id, song) => dispatch(updateSong(id, song))
 });
