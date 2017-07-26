@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import merge from 'lodash/merge';
-import CommentIndexItemContainer from './comment_index_item_container'
+import CommentIndexItem from './comment_index_item';
 
 class CommentsIndex extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class CommentsIndex extends React.Component {
   render(){
     const { comments } = this.props;
     let allComments = comments.map((comment, idx) => (
-      <CommentIndexItemContainer key={`comment-${idx}`} comment={comment} />
+      <CommentIndexItem key={`comment-${idx}`} comment={comment} />
     ));
 
     if (allComments.length === 0) {
@@ -76,7 +76,7 @@ class CommentsIndex extends React.Component {
         <br/>
         <br/>
         <ul className='comment-list'>
-          {allComments}
+          { allComments }
         </ul>
       </div>
     );

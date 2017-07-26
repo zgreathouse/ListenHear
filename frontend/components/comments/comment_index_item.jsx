@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 class CommentIndexItem extends React.Component {
 
   render(){
     const { comment } = this.props;
+    console.log(comment);
+
     return(
       <li className='comment-item'>
         <div>
           <Link to={`/user/${comment.user_id}`}>
-            <h4>{comment.user_username}</h4>
+            <p>{comment.user_username}</p>
           </Link>
         </div>
 

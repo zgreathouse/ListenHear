@@ -24,12 +24,12 @@ class SongIndexItem extends React.Component {
     this.props.assignCurrentSong(song.id);
   }
 
-
   render() {
     const { song } = this.props;
     if (!song) {
       return null;
     }
+
     return (
       <div className='all-song-items'>
         <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />

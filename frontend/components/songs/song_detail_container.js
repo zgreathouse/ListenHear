@@ -2,6 +2,9 @@ import { connect } from 'react-redux';
 import SongDetail from './song_detail';
 import { fetchSongs, fetchSong } from '../../actions/song_actions';
 import { selectAllSongs } from '../../reducers/selector';
+import { assignCurrentSong,
+         playAudioPlayer,
+         pauseAudioPlayer} from '../../actions/audio_player_actions';
 
 const mapStateToProps = (state, { match }) => ({
   song: state.songs.entities[match.params.songId],

@@ -4,10 +4,8 @@
 
 .root-page-index {
   height: 600px;
-  margin-left: 80px;
-  margin-right: 80px;
   background-color: white;
-  margin-top: -23px;
+  margin-top: 93px;
 }
 
 .root-index-header {
@@ -29,6 +27,7 @@
 
 .all-song-items {
   padding-top: 30px;
+  padding-left: 30px;
 }
 
 .song-index-header {
@@ -246,8 +245,8 @@
 
 .song-details {
   height: 300px;
-  border-bottom: 1px solid #EEE;
-  border-left: 1px solid #EEE;
+  border-bottom: 1.5px solid #EEE;
+  // border-left: 1px solid #EEE;
   margin: 100px;
   margin-top: 20px;
   display: flex;
@@ -256,7 +255,7 @@
 }
 
 .show-page-song-image {
-  box-shadow: 5px 5px 1.5px #EEE;
+  box-shadow: 7px 7px 1.5px #EEE;
 }
 
 .song-detail-title-artist {
@@ -282,6 +281,7 @@
 .show-page-button-box {
   padding-top: 50px;
   padding-left: 50px;
+  width: 100px;
 }
 
 .show-page-play-button {
@@ -289,8 +289,12 @@
   height: 100px;
 }
 
-
-
+.show-page-pause-button {
+  width: 90px;
+  height: 90px;
+  padding-left: 6px;
+  padding-top: 8px;
+}
 
 /********************************************/
 /* Comments section */
@@ -305,7 +309,7 @@
   padding-bottom: 40px;
   display: flex;
   border-top: 1.5px solid #EEE;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-left: 30px;
   margin: 50px;
 }

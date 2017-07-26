@@ -6,7 +6,7 @@ import { createComment,
          clearComments,
          clearCommentErrors } from '../../actions/comment_actions';
 import CommentsIndex from './comments_index';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, props) => ({
     comments: allCommentsBySong(state),

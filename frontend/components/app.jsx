@@ -16,7 +16,6 @@ import NavBarContainer from './navBar/nav_bar_container';
 import SongIndexContainer from './songs/songs_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
 // '/songs/data.song.id}'
-import CommentsContainer from './comments/comments_container';
 import SongDetailContainer from './songs/song_detail_container';
 
 

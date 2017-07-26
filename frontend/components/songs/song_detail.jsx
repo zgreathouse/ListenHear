@@ -1,6 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import CommentsContainer from '../comments/comments_container';
+import { withRouter } from 'react-router-dom';
+import CommentsIndexContainer from '../comments/comments_index_container';
 
 class SongDetail extends React.Component {
   constructor(props) {
@@ -29,12 +29,11 @@ class SongDetail extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-
     const { song } = this.props;
     if (!song) {
       return null
     }
+
     return (
       <div className="song-details-page">
         <section className="song-details">
@@ -82,7 +81,7 @@ class SongDetail extends React.Component {
             {/*artist-picture*/}
           </div>
           <div>
-            <CommentsContainer/>
+            <CommentsIndexContainer/>
           </div>
         </section>
       </div>
