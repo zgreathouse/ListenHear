@@ -6,3 +6,7 @@ export const allCommentsBySong = (state) => {
   const commentArray = values(state.comments.comments);
   return commentArray.reverse();
 };
+
+export const allSongsByUser = state => {
+  return values(state.user.songs);
+};

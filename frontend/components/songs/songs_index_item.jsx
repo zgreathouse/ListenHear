@@ -57,9 +57,10 @@ class SongIndexItem extends React.Component {
           <section className="play-and-details">
             <div className="artist-title">
               { song.user ?
-              <div className="song-item-artist">{ song.user.username }
-              </div> : <div></div>
+              <Link to={`/users/${song.user.id}`} className="song-item-artist">{ song.user.username }
+              </Link> : <div></div>
               }
+              <br/>
               <Link to={`/songs/${song.id}`} className="song-item-title" >{ song.title }</Link>
             </div>
 

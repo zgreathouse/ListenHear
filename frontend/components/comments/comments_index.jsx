@@ -73,11 +73,20 @@ class CommentsIndex extends React.Component {
               {this.renderErrors()}
           </form>
         </div>
-        <br/>
-        <br/>
-        <ul className='comment-list'>
-          { allComments }
-        </ul>
+
+        <section className="full-comments-section">
+          <div className="song-artist">
+            Artist Picture
+            <br/>
+            Artist Name
+          </div>
+
+          <div>
+            <ul className='comment-list'>
+              { allComments }
+            </ul>
+          </div>
+        </section>
       </div>
     );
   }

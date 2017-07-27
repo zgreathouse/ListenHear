@@ -15,9 +15,10 @@ import RootPageIndex from './root_page_index/root_page_index_container';
 import NavBarContainer from './navBar/nav_bar_container';
 import SongIndexContainer from './songs/songs_index_container';
 import AudioPlayerContainer from './audio_player/audio_player_container';
-// '/songs/data.song.id}'
+// '/songs/:songId}'
 import SongDetailContainer from './songs/song_detail_container';
-
+// '/users/:userId'
+import UserSplashContainer from './user_page/user_splash_page_container';
 
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
     <ProtectedRoute path='/' component={NavBarContainer} />
     <Switch>
       <ProtectedRoute path='/songs/:songId' component={SongDetailContainer} />
+      <ProtectedRoute path='/users/:userId' component={UserSplashContainer} />
       <ProtectedRoute path='/home' component={SongIndexContainer} />
       <AuthRoute path='/' component={SplashPageContainer} />
     </Switch>
