@@ -6,7 +6,8 @@ import { createSong, updateSong } from '../../actions/song_actions';
 
 
 const mapStateToProps = (state, props) => ({
-  id: state.session.currentUser.id
+  id: state.session.currentUser.id,
+  errors: state.songs.errors
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

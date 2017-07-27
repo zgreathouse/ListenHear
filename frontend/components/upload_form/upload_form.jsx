@@ -16,6 +16,7 @@ class UploadForm extends React.Component {
       this.state = this.props.song;
     }
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.setImage = this.setImage.bind(this);
     this.setSong = this.setSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,6 +77,7 @@ class UploadForm extends React.Component {
   render(){
     return(
       <div className="upload-form">
+          <div>{this.renderErrors()}</div>
         <form className="upload-form-items">
 
           <div className="upload-header-flex">

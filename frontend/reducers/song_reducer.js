@@ -1,9 +1,14 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG } from '../actions/song_actions';
+import { RECEIVE_SONG,
+         RECEIVE_SONGS,
+         REMOVE_SONG,
+         RECEIVE_SONG_ERRORS,
+         CLEAR_ERRORS } from '../actions/song_actions';
 
 const initialState = () => ({
-  entities: {}
+  entities: {},
+  errors: []
 })
 
 const SongReducer = (state = initialState(), action) => {
@@ -24,6 +29,14 @@ const SongReducer = (state = initialState(), action) => {
       newState = Object.assign({}, state);
       delete newState.entities[action.id];
       return newState;
+
+    case RECEIVE_SONG_ERRORS:
+      const errors = action.errors;
+      return merge({}, state, { errors });
+
+    case CLEAR_ERRORS:
+      const newErrors = [];
+      return merge({}, state, { newErrors });
 
     default:
       return state;

@@ -7,7 +7,7 @@ import UserSplashPage from './user_splash_page';
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   user: state.users.user,
-  songs: allSongsByUser(state),
+  songs: allSongsByUser(state)
 });
 
 const mapDispatchToProps = dispatch => ({

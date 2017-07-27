@@ -12,7 +12,8 @@ const mapStateToProps = (state, props) => ({
     comments: allCommentsBySong(state),
     errors: state.comments.errors,
     song: state.songs.song,
-    songId: props.songId
+    songId: props.songId,
+    // user: state.songs.entities[match.params.songId].user
 });
 
 const mapDispatchToProps = dispatch => ({

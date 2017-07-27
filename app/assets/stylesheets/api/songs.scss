@@ -103,6 +103,18 @@
   width: 300px;
 }
 
+.delete-button-flex {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+  margin-bottom: -20px;
+}
+
+.delete-button {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
 // .song-item-genre-flex {
 //   display: flex;
 //   justify-content: flex-end;

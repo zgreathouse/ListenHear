@@ -4,6 +4,8 @@ import * as APIUtil from '../util/song_api_util'
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
 export const REMOVE_SONG = 'REMOVE_SONG';
+export const RECEIVE_SONG_ERRORS = "RECEIVE_SONG_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 //sync actions
 export const receiveSong = song => ({
@@ -16,9 +18,18 @@ export const receiveSongs = songs => ({
   songs
 });
 
-export const removeSong = song => ({
+export const removeSong = id => ({
   type: REMOVE_SONG,
-  song
+  id
+});
+
+export const receiveSongErrors = (errors) => ({
+  type: RECEIVE_SONG_ERRORS,
+  errors
+});
+
+export const clearErrors = (errors) => ({
+  type: CLEAR_ERRORS
 });
 
 //async actions
@@ -45,3 +56,10 @@ export const deleteSong = id => dispatch => (
     dispatch(removeSong(song))
   ))
 );
+
+export const updateSong = (id, song) => dispatch => {
+  return APIUtil.updateSong(id, song).then(song =>
+    dispatch(receiveSong(song)),
+    error => dispatch(receiveSongErrors(error.responseJSON))
+  );
+};

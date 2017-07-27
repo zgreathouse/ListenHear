@@ -9,6 +9,11 @@ class SongDetail extends React.Component {
     this.handleAssignCurrentSong = this.handleAssignCurrentSong.bind(this);
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handlePauseClick = this.handlePauseClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.fetchSongs();
   }
 
   handlePlayClick () {
@@ -24,14 +29,27 @@ class SongDetail extends React.Component {
     this.props.assignCurrentSong(song.id);
   }
 
-  componentDidMount(){
-    this.props.fetchSong(this.props.match.params.songId);
+  handleDelete(e) {
+    e.preventDefault();
+    var result = confirm("Are you sure you want to delete this song?");
+    if (result) {
+      this.props.deleteSong(this.props.song.id)
+        .then(data => this.props.history.push(`/home`));
+      // this.props.fetchSongs()
+    }
   }
 
   render() {
     const { song } = this.props;
     if (!song) {
       return null
+    }
+
+    let deleteButton;
+    if (this.props.currentUser && this.props.currentUser.id === song.artist_id) {
+      deleteButton = <button
+        className='delete-button'
+        onClick={this.handleDelete}>Delete Song</button>;
     }
 
     return (
@@ -69,14 +87,20 @@ class SongDetail extends React.Component {
 
             {/*progress bar*/}
           </div>
+
           <div className="image-show-page">
             <img className="show-page-song-image" height="290" width="290" src={song.image_url} alt="cover-photo" />
           </div>
         </section>
 
-
+        <div className="delete-button-flex">
+          <img className='delete-button' onClick={this.handleDelete}
+            src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
+          </img>
+        </div>
 
         <section className="comments-section">
+
           <div>
             {/*artist-picture*/}
           </div>

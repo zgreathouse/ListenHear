@@ -13,6 +13,7 @@ class CommentsIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setBody = this.setBody.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleDelete = this.handleDelete.bind(his);
   }
 
   componentDidMount(){
@@ -34,6 +35,14 @@ class CommentsIndex extends React.Component {
   setBody(e){
     this.setState({ body: e.target.value });
   }
+
+  // handleDelete() {
+  //
+  // }
+  // <img className='delete-comment-button' onClick={this.handleComment}
+  //   src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
+  // </img>
+
 
   renderErrors() {
     if (this.props.errors) {
@@ -77,8 +86,10 @@ class CommentsIndex extends React.Component {
         <section className="full-comments-section">
           <div className="song-artist">
             Artist Picture
+            {/* <img className="song-artist" src={this.props.user.image_url}></img> */}
             <br/>
             Artist Name
+            {/* {this.props.user.username} */}
           </div>
 
           <div>
