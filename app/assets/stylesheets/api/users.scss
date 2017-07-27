@@ -1,3 +1,42 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-page {
+  background-color: white;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.user-song-index {
+  margin-left: 150px;
+}
+
+.user-song-index-header {
+  border-bottom: 1.5px solid #EEE;
+  width: 970px;
+}
+
+.user-profile-pic {
+  margin-left: 30px;
+}
+
+.header-top {
+  width: 400px;
+  margin-left: 120px;
+}
+
+.all-song-items {
+  margin-left: -80px;
+}
+
+.banner {
+  width: 400px;
+  border: 1px solid #333;
+}
+
+.user-song-index-header {
+  color: #333;
+}

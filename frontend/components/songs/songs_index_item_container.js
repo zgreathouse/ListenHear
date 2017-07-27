@@ -4,10 +4,11 @@ import { fetchSongs, fetchSong } from '../../actions/song_actions';
 import { assignCurrentSong, playAudioPlayer, pauseAudioPlayer } from '../../actions/audio_player_actions';
 import { selectAllSongs } from '../../reducers/selector';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, { song }) => ({
   songs: selectAllSongs(state),
   playing: state.audioPlayer.playing,
-  currentSong: state.audioPlayer.currentSong
+  currentSong: state.audioPlayer.currentSong,
+  song
 });
 
 const mapDispatchToProps = (dispatch) => ({

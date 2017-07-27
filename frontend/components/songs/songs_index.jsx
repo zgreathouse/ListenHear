@@ -13,7 +13,7 @@ class SongIndex extends React.Component {
   render() {
     const { songs } = this.props;
     const allSongs = songs.map((song, idx) => (
-      <SongIndexItemContainer key={`song-${idx}`} song={song} />
+      <SongIndexItemContainer key={`song-${idx}`} song={ song } />
     ));
 
     return (

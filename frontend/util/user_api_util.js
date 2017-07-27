@@ -8,7 +8,7 @@ export const fetchUser = id => (
 export const fetchAllSongsByUser = id => (
   $.ajax({
     method: 'GET',
-    url: `/api/user/${id}/songs`
+    url: `/api/users/${id}/songs`
   })
 );
 

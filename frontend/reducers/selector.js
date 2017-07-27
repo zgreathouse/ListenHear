@@ -8,5 +8,5 @@ export const allCommentsBySong = (state) => {
 };
 
 export const allSongsByUser = state => {
-  return values(state.user.songs);
+  return values(state.users.songs);
 };

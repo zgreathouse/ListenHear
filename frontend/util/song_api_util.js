@@ -22,7 +22,6 @@ export const createSong = (song) => (
   })
 );
 
-
 export const deleteSong = (id) => (
   $.ajax({
     method: "DELETE",

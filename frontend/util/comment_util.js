@@ -13,7 +13,6 @@ export const deleteComment = id => (
   })
 );
 
-
 export const fetchAllCommentsBySong= id => (
   $.ajax({
     method: 'GET',

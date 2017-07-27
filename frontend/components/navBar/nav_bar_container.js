@@ -7,7 +7,10 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  signout: () => dispatch(signout()),
+  signout: (e) => {
+    e.preventDefault();
+    return dispatch(signout());
+  }
 });
 
 export default connect(

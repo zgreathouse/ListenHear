@@ -24,7 +24,7 @@ class UserSplashPage extends React.Component {
   }
 
   componentDidMount(){
-   this.props.requestSingleUser(parseInt(this.props.match.params.userId))
+   this.props.requestUser(parseInt(this.props.match.params.userId))
    .then(()=> {
      this.props.requestSongsByUser(parseInt(this.props.match.params.userId));
    });
@@ -32,7 +32,7 @@ class UserSplashPage extends React.Component {
 
  componentWillReceiveProps(nextProps) {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
-      this.props.requestSingleUser(parseInt(nextProps.match.params.userId))
+      this.props.requestUser(parseInt(nextProps.match.params.userId))
       .then(()=> {
         this.props.requestSongsByUser(parseInt(nextProps.match.params.userId));
       });
@@ -40,7 +40,6 @@ class UserSplashPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { user, currentUser, songs, receiveSingleSong } = this.props;
     let songList;
     let songListHeader;
@@ -57,12 +56,13 @@ class UserSplashPage extends React.Component {
       songList = songs.map((song, idx) =>
       (<SongsIndexItem key={`song-${idx}`} song={song} receiveSingleSong={receiveSingleSong}/>));
       } else {
-        songList = <div className='no-songs'><h3>{this.props.user.username} has no songs.</h3>
-        </div>;
+        songList = (<div className='no-songs'>
+          <h3>{this.props.user.username} hasn't uploading any songs yet.</h3>
+        </div>);
       }
 
-      if (user.id === currentUser.id) {
-            editProfPicButton =
+    if (currentUser && user.id === currentUser.id) {
+          editProfPicButton =
             <label htmlFor='prof-upload'>
               Update Photo
               <input type="file"
@@ -71,7 +71,7 @@ class UserSplashPage extends React.Component {
                 style={{'display': 'none'}}/>
             </label>;
 
-            editCoverPicButton =
+          editCoverPicButton =
             <label htmlFor='cover-upload'>
               Update Cover Photo
               <input type="file"
@@ -79,31 +79,33 @@ class UserSplashPage extends React.Component {
                 id='cover-upload'
                 style={{'display': 'none'}}/>
             </label>;
-          }
+        }
 
-        const bannerPictureStyle = {
-          height: '100%',
-          width: '100%',
-          backgroundImage: `url(${coverPic})`
-        };
+    const bannerPictureStyle = {
+      height: '100%',
+      width: '100%',
+      backgroundImage: `url(${coverPic})`
+    };
 
     return(
-      <div className="overall-user-page">
+      <div className="user-page-flex">
         <div className="user-page">
           <div className="header-user-page">
 
             <div className="banner" style={bannerPictureStyle}>
               <div className="between-left-middle">
                 <div className="header-left">
-                  <div className="header-top">
-                    <img className="prof-pic" height="170" width="170" src={profilePic} alt={user.username} />
 
+                  <div className="header-top">
+                    <img className="user-profile-pic" height="170" width="170" src={profilePic} alt={user.username} />
                   </div>
 
                   <div>
                     {editProfPicButton}
                   </div>
+
                 </div>
+
                 <div>
                   <text>{user.username}</text>
                 </div>
@@ -117,12 +119,14 @@ class UserSplashPage extends React.Component {
             </div>
 
           </div>
-          <div className="songs-user-page">
-            <br />
-            <h2>Tracks</h2>
-              <br />
 
+          <div className="user-song-index">
+            <br/>
+            <h2 className="user-song-index-header">Songs</h2>
+            <br/>
+            <ul>
             {songList}
+          </ul>
           </div>
         </div>
 

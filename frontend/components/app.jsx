@@ -25,8 +25,8 @@ const App = () => (
   <div>
     <ProtectedRoute path='/' component={NavBarContainer} />
     <Switch>
-      <ProtectedRoute path='/songs/:songId' component={SongDetailContainer} />
       <ProtectedRoute path='/users/:userId' component={UserSplashContainer} />
+      <ProtectedRoute path='/songs/:songId' component={SongDetailContainer} />
       <ProtectedRoute path='/home' component={SongIndexContainer} />
       <AuthRoute path='/' component={SplashPageContainer} />
     </Switch>

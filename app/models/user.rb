@@ -1,13 +1,16 @@
 class User < ApplicationRecord
-
 	attr_reader :password
 
 	validates :username, :password_digest, :session_token, presence: true
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
-	has_attached_file :avatar, style: { medium: "300x300>", thumb: "100x100>"}, default_url: "default_avatar.jpg"
+	has_attached_file :avatar, default_url: "http://images.all-free-download.com/images/graphiclarge/gorgeous_classical_music_background_04_vector_157885.jpg"
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+	has_attached_file :cover_art, default_url: "http://images.all-free-download.com/images/graphiclarge/gorgeous_classical_music_background_04_vector_157885.jpg"
+	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
+  
 
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
@@ -16,7 +19,7 @@ class User < ApplicationRecord
 		class_name: "Song",
 		primary_key: :id,
 		foreign_key: :artist_id
-		
+
 	has_many :comments
 
 	def password= password
