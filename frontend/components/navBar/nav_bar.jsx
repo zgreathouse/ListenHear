@@ -11,12 +11,16 @@ const NavBar = ({currentUser, signout}) => (
       </hgroup>
 
       <hgroup className="header-group-2">
-        <div>
+        <div className="username-link-flex">
           <Link to="/home" className="nav-home-link">Home</Link>
         </div>
         <UploadModal className="update-button"/>
-        {/* <img className="nav-profile-image" src={currentUser.image_url} alt="cover-photo" /> */}
-        <button className="username">{currentUser.username}</button>
+        <div className="nav-profile-image-box">
+          <img className="nav-profile-image" height="40" width="40" src={currentUser.image_url}/>
+        </div>
+        <div className="username-link">
+          <Link to={`/users/${currentUser.id}`}>{currentUser.username}</Link>
+        </div>
         <button className="signout-button" onClick={signout}>Sign Out</button>
     	</hgroup>
 

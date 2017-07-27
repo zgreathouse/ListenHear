@@ -13,7 +13,7 @@ class CommentsIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setBody = this.setBody.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    this.handleDelete = this.handleDelete.bind(his);
+    // this.handleDelete = this.handleDelete.bind(his);
   }
 
   componentDidMount(){
@@ -86,7 +86,7 @@ class CommentsIndex extends React.Component {
         <section className="full-comments-section">
           <div className="song-artist">
             Artist Picture
-            {/* <img className="song-artist" src={this.props.user.image_url}></img> */}
+            <img className="song-artist" src={this.props.user.image_url}></img>
             <br/>
             Artist Name
             {/* {this.props.user.username} */}

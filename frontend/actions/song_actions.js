@@ -53,7 +53,7 @@ export const createSong = (song) => dispatch => (
 
 export const deleteSong = id => dispatch => (
   APIUtil.deleteSong(id).then(song => (
-    dispatch(removeSong(song))
+    dispatch(removeSong(song.id))
   ))
 );
 

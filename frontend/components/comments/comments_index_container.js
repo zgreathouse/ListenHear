@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => ({
     errors: state.comments.errors,
     song: state.songs.song,
     songId: props.songId,
-    // user: state.songs.entities[match.params.songId].user
+    user: state.songs.entities[props.match.params.songId].user
 });
 
 const mapDispatchToProps = dispatch => ({
