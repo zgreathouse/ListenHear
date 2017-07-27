@@ -28,13 +28,18 @@
 .all-song-items {
   padding-top: 30px;
   padding-left: 30px;
+
 }
 
 .song-index-header {
   font-size: 26px;
   margin-left: 80px;
+  margin-right: 80px;
   margin-top: 90px;
+  padding-left: 20px;
   color: #333;
+  // border-bottom: 1.5px solid #EEE;
+  width: 110px;
 }
 
 .song-image {

@@ -8,18 +8,18 @@ class UserSplashPage extends React.Component {
     super(props);
 
     this.setProfilePic = this.setProfilePic.bind(this);
-    this.setCoverPic = this.setCoverPic.bind(this);
+    this.setCoverArt = this.setCoverArt.bind(this);
   }
 
   setProfilePic(e) {
     let formData = new FormData();
-    formData.append("user[image]", e.currentTarget.files[0]);
+    formData.append("user[avatar]", e.currentTarget.files[0]);
     this.props.updateUser(this.props.currentUser.id, formData);
   }
 
-  setCoverPic(e) {
+  setCoverArt(e) {
     let formData = new FormData();
-    formData.append("user[coverpic]", e.currentTarget.files[0]);
+    formData.append("user[cover_art]", e.currentTarget.files[0]);
     this.props.updateUser(this.props.currentUser.id, formData);
   }
 
@@ -40,7 +40,7 @@ class UserSplashPage extends React.Component {
   }
 
   render() {
-    const { user, currentUser, songs, receiveSingleSong } = this.props;
+    const { user, currentUser, songs, receiveSong } = this.props;
     let songList;
     let songListHeader;
     let editProfPicButton;
@@ -49,12 +49,12 @@ class UserSplashPage extends React.Component {
       return null;
     }
     const profilePic = user.image_url;
-    const coverPic = user.cover_art_url;
+    const coverArt = user.cover_art_url;
 
 
     if (this.props.songs.length > 0) {
       songList = songs.map((song, idx) =>
-      (<SongsIndexItem key={`song-${idx}`} song={song} receiveSingleSong={receiveSingleSong}/>));
+      (<SongsIndexItem key={`song-${idx}`} song={song} receiveSong={receiveSong}/>));
       } else {
         songList = (<div className='no-songs'>
           <h3>{this.props.user.username} hasn't uploading any songs yet.</h3>
@@ -75,21 +75,24 @@ class UserSplashPage extends React.Component {
         <label htmlFor='cover-upload'>
           Update Cover Photo
           <input type="file"
-            onChange={this.setCoverPic}
+            onChange={this.setCoverArt}
             id='cover-upload'
             style={{'display': 'none'}}/>
         </label>;
     }
 
     const bannerPictureStyle = {
-      height: '100%',
-      width: '100%',
-      backgroundImage: `url(${coverPic})`
+      backgroundImage: `url(${coverArt})`
     };
 
     return(
+
       <div className="user-page-flex">
+        <div className="banner-username">
+          {user.username}
+        </div>
         <div className="user-page">
+
           <div className="header-user-page">
 
             <div className="banner" style={bannerPictureStyle}>
@@ -100,31 +103,23 @@ class UserSplashPage extends React.Component {
                     <img className="user-profile-pic" height="170" width="170" src={profilePic} alt={user.username} />
                   </div>
 
-                  <div>
+                  <div className="prof-pic-upload">
                     {editProfPicButton}
                   </div>
 
                 </div>
-
-                <div>
-                  <text>{user.username}</text>
-                </div>
-              </div>
-
-
-
-              <div className="header-right">
-                {editCoverArtButton}
               </div>
             </div>
 
           </div>
-
+          <div className="cover-pic-upload">
+            {editCoverArtButton}
+          </div>
           <div className="user-song-index">
             <br/>
             <h2 className="user-song-index-header">Songs</h2>
             <br/>
-            <ul>
+            <ul >
             {songList}
           </ul>
           </div>

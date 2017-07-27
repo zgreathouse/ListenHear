@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
 	has_attached_file :cover_art, default_url: "http://images.all-free-download.com/images/graphiclarge/gorgeous_classical_music_background_04_vector_157885.jpg"
 	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
-  
+
 
 	after_initialize :ensure_session_token
-	before_validation :ensure_session_token_uniqueness
+	# before_validation :ensure_session_token_uniqueness
 
 	has_many :songs,
 		class_name: "Song",
@@ -39,7 +39,7 @@ class User < ApplicationRecord
 
 	def reset_session_token!
 		self.session_token = new_session_token
-		ensure_session_token_uniqueness
+		# ensure_session_token_uniqueness
 		self.save
 		self.session_token
 	end
@@ -54,9 +54,9 @@ class User < ApplicationRecord
 		SecureRandom.base64
 	end
 
-	def ensure_session_token_uniqueness
-		while User.find_by(session_token: self.session_token)
-			self.session_token = new_session_token
-		end
-	end
+	# def ensure_session_token_uniqueness
+	# 	while User.find_by(session_token: self.session_token)
+	# 		self.session_token = new_session_token
+	# 	end
+	# end
 end

@@ -6,7 +6,7 @@
   background-color: white;
   margin-left: 80px;
   margin-right: 80px;
-  padding-top: 80px;
+  padding-top: 20px;
   padding-bottom: 60px;
 }
 
@@ -28,7 +28,7 @@
   margin-left: 120px;
 }
 
-.all-song-items {
+.all-song-items-user {
   margin-left: -80px;
 }
 
@@ -39,4 +39,46 @@
 
 .user-song-index-header {
   color: #333;
+}
+
+.banner-username {
+  border-bottom: 1.5px solid #EEE;
+  color: #333;
+  padding-top: 20px;
+  margin-top: 40px;
+  margin-right: 80px;
+  margin-left: 80px;
+  padding-left: 70px;
+  background-color: white;
+  font-size: 30px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.banner {
+  width: 1000px;
+  height: 300px;
+  margin-left: 130px;
+}
+
+.user-profile-pic {
+  margin-top: 70px;
+  margin-left: -50px;
+}
+
+.prof-pic-upload {
+  border-bottom: 1px solid white;
+  width: 120px;
+  margin-left: 98px;
+  color: white;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+
+
+.cover-pic-upload {
+  border-bottom: 1px solid #EEE;
+  width: 170px;
+  margin-left: 130px;
+  color: #333;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
