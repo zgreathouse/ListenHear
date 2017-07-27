@@ -24,13 +24,13 @@ class UserSplashPage extends React.Component {
   }
 
   componentDidMount(){
-   this.props.requestUser(parseInt(this.props.match.params.userId))
-   .then(()=> {
-     this.props.requestSongsByUser(parseInt(this.props.match.params.userId));
-   });
- }
+    this.props.requestUser(parseInt(this.props.match.params.userId))
+    .then(()=> {
+      this.props.requestSongsByUser(parseInt(this.props.match.params.userId));
+    });
+  }
 
- componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (this.props.match.params.userId !== nextProps.match.params.userId) {
       this.props.requestUser(parseInt(nextProps.match.params.userId))
       .then(()=> {
@@ -44,12 +44,12 @@ class UserSplashPage extends React.Component {
     let songList;
     let songListHeader;
     let editProfPicButton;
-    let editCoverPicButton;
+    let editCoverArtButton;
     if (!this.props.user) {
       return null;
     }
-    const profilePic = user.profile_pic_url;
-    const coverPic = user.cover_pic_url;
+    const profilePic = user.image_url;
+    const coverPic = user.cover_art_url;
 
 
     if (this.props.songs.length > 0) {
@@ -62,24 +62,24 @@ class UserSplashPage extends React.Component {
       }
 
     if (currentUser && user.id === currentUser.id) {
-          editProfPicButton =
-            <label htmlFor='prof-upload'>
-              Update Photo
-              <input type="file"
-                onChange={this.setProfilePic}
-                id='prof-upload'
-                style={{'display': 'none'}}/>
-            </label>;
+      editProfPicButton =
+        <label htmlFor='prof-upload'>
+          Update Photo
+          <input type="file"
+            onChange={this.setProfilePic}
+            id='prof-upload'
+            style={{'display': 'none'}}/>
+        </label>;
 
-          editCoverPicButton =
-            <label htmlFor='cover-upload'>
-              Update Cover Photo
-              <input type="file"
-                onChange={this.setCoverPic}
-                id='cover-upload'
-                style={{'display': 'none'}}/>
-            </label>;
-        }
+      editCoverArtButton =
+        <label htmlFor='cover-upload'>
+          Update Cover Photo
+          <input type="file"
+            onChange={this.setCoverPic}
+            id='cover-upload'
+            style={{'display': 'none'}}/>
+        </label>;
+    }
 
     const bannerPictureStyle = {
       height: '100%',
@@ -114,7 +114,7 @@ class UserSplashPage extends React.Component {
 
 
               <div className="header-right">
-                {editCoverPicButton}
+                {editCoverArtButton}
               </div>
             </div>
 

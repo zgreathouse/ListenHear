@@ -32,7 +32,7 @@ export const requestUser = id => dispatch => (
 
 export const updateUser = (id, user) => dispatch => {
   return APIUtil.updateUser(id, user).then(user =>
-    dispatch(receiveSingleUser(user)),
+    dispatch(receiveUser(user)),
     errors => dispatch(userErrors(errors.responseJSON))
   );
 };

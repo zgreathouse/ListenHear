@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Song.destroy_all
-
-guest = User.create(username: "guest", password: "password1")
-nujabes = User.create(username: "Nujabes", password: "password1")
+# 
+# guest = User.create(username: "guest", password: "password1")
+# nujabes = User.create(username: "Nujabes", password: "password1")
 #
 #
 # Song.create!(title: "Feather", genre: "Triphop", song_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/tracks/000/000/038/original/12_-_Feather_ft_Cise_Starr__Akin.mp3?1501022022", image_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/avatars/000/000/038/original/default_avatar.jpg?1501022022", artist_id: nujabes.id)
