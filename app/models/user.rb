@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	has_attached_file :avatar, default_url: "https://www.washingtonpost.com/sf/sports/wp-content/uploads/sites/2/2015/02/headphones_icon_333_small.png", s3_protocol: :https
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-	has_attached_file :cover_art, default_url: "https://cdn100.picsart.com/208639238002202.jpg?r1024x1024", s3_protocol: :https
+	has_attached_file :cover_art, default_url: "https://cdn100.picsart.com/208639238002202.jpg", s3_protocol: :https
 	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
 
 	after_initialize :ensure_session_token
