@@ -54,7 +54,7 @@
 
 .nav-home-link {
   background-color: transparent;
-  font-size: 14px;
+  font-size: 15px;
   color: white;
   height: 40px;
   width: 70px;
@@ -64,11 +64,23 @@
   padding-right: 630px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   padding-left: 10px;
+  :link {
+    color: white;
+  }
+  :visited {
+    color: white;
+  }
+  :hover {
+    color: #F50;
+  }
+  :active {
+    color: white;
+  }
 }
 
 .update-button {
   background-color: #f50;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   height: 40px;
   width: 100px;
@@ -81,7 +93,7 @@
 
 .username-link {
   background-color: transparent;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   height: 40px;
   width: 200px;
@@ -90,11 +102,23 @@
   padding-top: 20px;
   padding-left: 10px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  :link {
+    color: white;
+  }
+  :visited {
+    color: white;
+  }
+  :hover {
+    color: #F50;
+  }
+  :active {
+    color: white;
+  }
 }
 
 .signout-button {
   background-color: transparent;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   height: 40px;
   width: 100px;

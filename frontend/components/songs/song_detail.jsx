@@ -40,17 +40,23 @@ class SongDetail extends React.Component {
   }
 
   render() {
-    const { song } = this.props;
+    const { song, currentUser } = this.props;
     if (!song) {
       return null
     }
 
     let deleteButton;
-    if (this.props.currentUser && this.props.currentUser.id === song.artist_id) {
-      deleteButton = <button
-        className='delete-button'
-        onClick={this.handleDelete}>Delete Song</button>;
+
+    if (song.artist_id === currentUser.id) {
+      deleteButton = <div className="delete-button-flex">
+        <img className='delete-button' onClick={this.handleDelete}
+          src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
+        </img>
+      </div>
+    } else {
+      deleteButton = <div></div>
     }
+
 
     return (
       <div className="song-details-page">
@@ -93,17 +99,9 @@ class SongDetail extends React.Component {
           </div>
         </section>
 
-        <div className="delete-button-flex">
-          <img className='delete-button' onClick={this.handleDelete}
-            src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
-          </img>
-        </div>
+        {deleteButton}
 
         <section className="comments-section">
-
-          <div>
-            {/*artist-picture*/}
-          </div>
           <div>
             <CommentsIndexContainer/>
           </div>

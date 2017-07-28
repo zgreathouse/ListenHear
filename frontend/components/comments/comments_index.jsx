@@ -84,12 +84,13 @@ class CommentsIndex extends React.Component {
         </div>
 
         <section className="full-comments-section">
-          <div className="song-artist">
-            Artist Picture
-            <img className="song-artist" src={this.props.user.image_url}></img>
+
+          <div className="song-artist-show-page-flex">
+            <img className="song-artist-show-page" height="170" width="170" src={this.props.user.image_url}></img>
             <br/>
-            Artist Name
-            {/* {this.props.user.username} */}
+            <div className="show-page-username">
+            {this.props.user.username}
+            </div>
           </div>
 
           <div>

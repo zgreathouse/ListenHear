@@ -97,9 +97,9 @@ class UserSplashPage extends React.Component {
 
             <div className="banner" style={bannerPictureStyle}>
               <div className="between-left-middle">
-                <div className="header-left">
+                <div className="profile-pic-section">
 
-                  <div className="header-top">
+                  <div className="profile-pic">
                     <img className="user-profile-pic" height="170" width="170" src={profilePic} alt={user.username} />
                   </div>
 
@@ -119,9 +119,11 @@ class UserSplashPage extends React.Component {
             <br/>
             <h2 className="user-song-index-header">Songs</h2>
             <br/>
-            <ul >
-            {songList}
-          </ul>
+            <div className="user-page-song-index">
+              <ul >
+                {songList}
+              </ul>
+            </div>
           </div>
         </div>
 

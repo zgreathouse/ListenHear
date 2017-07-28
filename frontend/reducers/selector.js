@@ -22,10 +22,17 @@ export const selectFiveSongs = (state) => {
   } else {
     fiveSongs = selectAllSongs(state);
   }
-  
+
   return fiveSongs;
 };
 
-export const allSongsByUser = state => {
-  return values(state.users.songs);
+export const allSongsByUser = ({ users }) => {
+  if (users.songs) {
+    const selectedSongs = [];
+    return values(users.songs).filter( (song) => {
+      return song.artist_id === users.user.id;
+    });
+  } else {
+    return [];
+  }
 };
