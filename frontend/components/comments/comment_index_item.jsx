@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 
 class CommentIndexItem extends React.Component {
 
+  // handleDelete() {
+  //
+  // }
+  // <img className='delete-comment-button' onClick={this.handleComment}
+  //   src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
+  // </img>
+
   render(){
     const { comment } = this.props;
 
@@ -11,7 +18,7 @@ class CommentIndexItem extends React.Component {
       <li className='comment-item'>
         <section>
         <div>
-          <Link to={`/user/${comment.user_id}`}>
+          <Link to={`/users/${comment.user_id}`}>
             <p>{comment.user_username}</p>
           </Link>
         </div>

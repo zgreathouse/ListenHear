@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import SongsIndexItem from '../songs/songs_index_item';
+import SongsIndexItemContainer from '../songs/songs_index_item_container';
 
 
 class UserSplashPage extends React.Component {
@@ -41,23 +41,23 @@ class UserSplashPage extends React.Component {
 
   render() {
     const { user, currentUser, songs, receiveSong } = this.props;
+    if (!this.props.user) {
+      return null;
+    }
     let songList;
     let songListHeader;
     let editProfPicButton;
     let editCoverArtButton;
-    if (!this.props.user) {
-      return null;
-    }
+
     const profilePic = user.image_url;
     const coverArt = user.cover_art_url;
 
-
     if (this.props.songs.length > 0) {
       songList = songs.map((song, idx) =>
-      (<SongsIndexItem key={`song-${idx}`} song={song} receiveSong={receiveSong}/>));
+      (<SongsIndexItemContainer key={`song-${idx}`} song={song} receiveSong={receiveSong}/>));
       } else {
         songList = (<div className='no-songs'>
-          <h3>{this.props.user.username} hasn't uploading any songs yet.</h3>
+          <p>{this.props.user.username} hasn't uploading any songs yet...</p>
         </div>);
       }
 
@@ -121,7 +121,7 @@ class UserSplashPage extends React.Component {
             <br/>
             <div className="user-page-song-index">
               <ul >
-                {songList}
+                { songList }
               </ul>
             </div>
           </div>

@@ -101,6 +101,7 @@
   border-color: transparent;
   padding-top: 20px;
   padding-left: 10px;
+  cursor: pointer;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   :link {
     color: white;
@@ -110,9 +111,6 @@
   }
   :hover {
     color: #F50;
-  }
-  :active {
-    color: white;
   }
 }
 
@@ -126,6 +124,9 @@
   text-align: center;
   border-color: transparent;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  :hover {
+    color: #F50;
+  }
 }
 
 .nav-profile-image-box {

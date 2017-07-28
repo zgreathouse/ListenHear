@@ -14,6 +14,12 @@
   margin-left: 150px;
 }
 
+.profile-pic-section {
+  width: 200px;
+  padding: 50px;
+  padding-top: 80px;
+}
+
 .profile-pic {
   display: flex;
   align-items: center;
@@ -63,17 +69,26 @@
 }
 
 .prof-pic-upload {
+  font-size: 14px;
   width: 170px;
   text-align: center;
   color: white;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  cursor: pointer;
+  :hover {
+    color: #F50;
+  }
 }
 
 
 .cover-pic-upload {
-  border-bottom: 1px solid #EEE;
+  font-size: 14px;
   width: 170px;
   margin-left: 130px;
   color: #333;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  cursor: pointer;
+  :hover {
+    color: #F50;
+  }
 }

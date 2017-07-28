@@ -30,7 +30,7 @@ const App = () => (
       <ProtectedRoute path='/home' component={SongIndexContainer} />
       <AuthRoute path='/' component={SplashPageContainer} />
     </Switch>
-    <ProtectedRoute path='/' component={AudioPlayerContainer} />
+    <Route path='/' component={AudioPlayerContainer} />
   </div>
 );
 

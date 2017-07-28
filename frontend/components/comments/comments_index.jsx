@@ -13,7 +13,6 @@ class CommentsIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setBody = this.setBody.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
-    // this.handleDelete = this.handleDelete.bind(his);
   }
 
   componentDidMount(){
@@ -30,18 +29,12 @@ class CommentsIndex extends React.Component {
     .then(()=> {
       this.setState({body: ''});
     });
+    this.props.clearCommentErrors();
   }
 
   setBody(e){
     this.setState({ body: e.target.value });
   }
-
-  // handleDelete() {
-  //
-  // }
-  // <img className='delete-comment-button' onClick={this.handleComment}
-  //   src="https://cdn3.iconfinder.com/data/icons/gray-toolbar-4/512/dustbin-512.png">
-  // </img>
 
 
   renderErrors() {
@@ -55,9 +48,7 @@ class CommentsIndex extends React.Component {
         </ul>
       );
     }
-
   }
-
 
   render(){
     const { comments } = this.props;

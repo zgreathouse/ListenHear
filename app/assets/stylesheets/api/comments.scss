@@ -55,7 +55,7 @@
   display: flex;
   flex-direction: column;
   width: 725px;
-  height: 500px;
+  height: 100%;
 }
 
 .song-artist {
@@ -103,4 +103,29 @@
 .show-page-username {
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   color: #333;
+}
+
+/***************************************/
+/*scroll bar stuff */
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+#wrapper
+{
+	text-align: center;
+	width: 500px;
+	margin: auto;
 }

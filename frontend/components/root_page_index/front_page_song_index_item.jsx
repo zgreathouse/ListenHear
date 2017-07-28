@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class SongIndexItem extends React.Component {
+class FrontPageIndexItem extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -31,21 +32,21 @@ class SongIndexItem extends React.Component {
     }
 
     return (
-      <div className='all-song-items'>
-        <img className="song-image" height="150" width="150" src={song.image_url} alt="cover-photo" />
-        <li className='song-item'>
+      <div className='container'>
+        <img className="image" src={song.image_url} alt="cover-photo" />
+        <li className='front-song-item'>
 
-          <div className="song-play-button">
+          <div className="middle">
             {!this.props.playing || this.props.currentSong !== song.id ?
               <div>
-                <div className="button-box">
+                <div className="text">
                   <img className="play-button"
                     onClick={this.handleAssignCurrentSong}
                     src="https://lh3.googleusercontent.com/puM-xku2myy_25xZvMwnx_1Qd_0vH-zavm0Fz73nHElIioMYt7Rh12GYD-GU2bHpiiM=w300">
                   </img>
                 </div>
               </div> : <div>
-                <div className="button-box">
+                <div className="text">
                   <img className="pause-button"
                     onClick={this.handlePauseClick}
                     src="https://www.r-m-n.com/image/img/skin/jrAudioPro/button_player_pause.png">
@@ -54,24 +55,12 @@ class SongIndexItem extends React.Component {
               </div>
             }
           </div>
-          
-          <section className="play-and-details">
-            <div className="artist-title">
-              { song.user ?
-              <Link to={`/users/${song.user.id}`} className="song-item-artist">{ song.user.username }
-              </Link> : <div></div>
-              }
-              <br/>
-              <Link to={`/songs/${song.id}`} className="song-item-title" >{ song.title }</Link>
-            </div>
 
-            &nbsp;
-            <div className="song-item-genre">{ song.genre }</div>
-          </section>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+          <div className="front-artist-title">
+            <div className="front-song-item-artist">{ song.user.username }</div>
+            <br/>
+            <div className="front-song-item-title" >{ song.title }</div>
+          </div>
         </li>
       </div>
 
@@ -79,17 +68,4 @@ class SongIndexItem extends React.Component {
   }
 }
 
-export default SongIndexItem;
-
-// <Link to={`/songs/${song.id}`}><li className="song-index-item">
-//   <Link to={`/songs/${song.id}`}>
-//     <img className="song-index-image" height="100" width="100" src={song.title} alt="cover-photo" />
-//   </Link>
-//   <ul>
-//     <li className="song-title">{ song.title }</li>
-//     <li className="song-username">{ song.user.username }</li>
-//   </ul>
-// </li></Link>
-
-
-//
+export default FrontPageIndexItem;

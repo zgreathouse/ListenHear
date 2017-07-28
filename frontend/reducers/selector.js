@@ -12,10 +12,10 @@ export const selectFiveSongs = (state) => {
   let fiveSongs = [];
   let song;
 
-  if (allSongs.length > 5) {
+  if (allSongs.length >= 5) {
     let i = 0;
-    while (fiveSongs.length < 5) {
-      song = allSongs[i];
+    while (fiveSongs.length <= 5) {
+      let song = allSongs[i];
       fiveSongs.push(song);
       i++;
     }

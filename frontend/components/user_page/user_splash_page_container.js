@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   requestUser: id => dispatch(requestUser(id)),
   requestSongsByUser: id => dispatch(requestSongsByUser(id)),
   receiveSong: song => dispatch(receiveSong(song)),
-  updateUser: (id, user) => dispatch(updateUser(id, user))
+  updateUser: (id, user) => dispatch(updateUser(id, user)),
 });
 
 
