@@ -6,6 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+* JavaScript version: ES6
 
 * System dependencies
 
@@ -13,7 +14,7 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
+* Database initialization: Amazon Web Service
 
 * How to run the test suite
 

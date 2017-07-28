@@ -1,5 +1,8 @@
 import React from 'react'
 import ReactHowler from 'react-howler'
+import ProgressBar from 'react-progressbar';
+// requestAnimationFrame polyfill
+import raf from 'raf';
 
 class AudioPlayer extends React.Component {
   constructor(props) {
@@ -9,6 +12,8 @@ class AudioPlayer extends React.Component {
 
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handlePauseClick = this.handlePauseClick.bind(this);
+    this.handleOnLoad = this.handleOnLoad.bind(this);
+    this.renderSeekPos = this.renderSeekPos.bind(this);
   }
 
   handlePlayClick () {
@@ -19,7 +24,48 @@ class AudioPlayer extends React.Component {
     this.props.pauseAudioPlayer();
   }
 
+  handleOnLoad () {
+    this.setState({
+      loaded: true,
+      duration: this.player.duration()
+    });
+    if (this.state.playing) {
+      this.renderSeekPos();
+    }
+  }
+
+  getDuration () {
+    this.player.duration()
+  }
+
+  renderSeekPos () {
+    this.setState({
+        seek: this.player.seek(),
+        progress: (this.player.seek() / this.player.duration())
+      });
+      if (this.state.playing) {
+        this._raf = raf(this.renderSeekPos);
+      }
+  }
+
   render () {
+    const Line = ProgressBar.Line;
+
+    const barOptions = {
+      strokeWidth: 4,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#FFEA82',
+      trailColor: 'rgb(180,180,180)',
+      trailWidth: 2,
+      svgStyle: {width: '100%', height: '100%'},
+      from: {color: '#FFFFFF'},
+      to: {color: 'rgb(215, 30, 58, .2)'},
+      step: (state, bar) => {
+        bar.path.setAttribute('stroke', state.color);
+      }
+    };
+
     return (
       <footer>
         {this.props.currentSong !== null ?
@@ -55,6 +101,14 @@ class AudioPlayer extends React.Component {
                 </div>
               </div>
             </div>
+
+            {/* <div className="progress-container">
+              <span>{(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}</span>
+              <Line progress={this.state.progress}
+                options={barOptions}
+                containerClassName={'progressbar-container'}/>
+              <span>{(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}</span>
+            </div> */}
           </div> : <div></div> }
       </footer>
     )
@@ -94,9 +148,7 @@ onEnd	      noop	    Called when media finishes playing
 //   this.player.howler
 // }
 //
-// getDuration () {
-//   this.player.duration()
-// }
+
 //
 // getSeek () {
 //   this.player.seek()

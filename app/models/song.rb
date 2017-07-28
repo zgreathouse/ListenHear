@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  validates :title, :artist_id, :avatar, :track, presence: true
+  validates :title, :artist_id, presence: true
 
   belongs_to :user,
     class_name: "User",
@@ -14,7 +14,7 @@ class Song < ApplicationRecord
 
   has_attached_file :track, presence: true, url: ':s3_domain_url', path: '/:class/:attachment/:id_partition/:style/:filename', bucket: 'zach-listenhear-dev'
   validates_attachment_content_type :track, content_type: /\Aaudio\/.*\z/
-  validates_with AttachmentSizeValidator, attributes: :track, less_than: 40.megabytes
+  # validates_with AttachmentSizeValidator, attributes: :track, less_than: 40.megabytes
 
 
 end

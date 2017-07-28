@@ -7,12 +7,76 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Song.destroy_all
+
+
+#users
+guest = User.create!(username: "guest", password: "password1")
+
+nujabes = User.create!(username: "Nujabes",
+  password: "1password1",
+  avatar: open("https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Profile+Pictures/download.jpeg"),
+  cover_art: open("https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Cover+Art/maxresdefault+(2).jpg"))
+
+darude = User.create!(username: "Darude",
+  password: "1password1",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Profile+Pictures/photo.jpg",
+  cover_art: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Cover+Art/dubai-desert-united-arab-emirates-jeeps-WINTERDESERT1201.jpg")
+
+deathcCabForCutie = User.create!(username: "Death Cab For Cutie",
+  password: "1password1",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Profile+Pictures/images.jpeg",
+  cover_art: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Cover+Art/carousel-kintsugi1.jpg")
+
+sigorRos = User.create!(username:"Sigur Rós",
+  password: "1password1",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Profile+Pictures/sigur-ros-electric-light-posed-2017-embed.jpg",
+  cover_art: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Cover+Art/maxresdefault+(4).jpg")
+
+#songs
+Song.create!(title: "Another Reflection",
+  genre: "Triphop",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/01+-+Reflection+Eternal.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/220px-ModalMusic.jpg",
+  artist_id: nujabes.id)
 # 
-# guest = User.create(username: "guest", password: "password1")
-# nujabes = User.create(username: "Nujabes", password: "password1")
-#
-#
-# Song.create!(title: "Feather", genre: "Triphop", song_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/tracks/000/000/038/original/12_-_Feather_ft_Cise_Starr__Akin.mp3?1501022022", image_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/avatars/000/000/038/original/default_avatar.jpg?1501022022", artist_id: nujabes.id)
-# Song.create!(title: "Peaceland", genre: "Triphop", song_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/tracks/000/000/034/original/37_-_Peaceland.mp3?1500925935", image_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/avatars/000/000/034/original/Various_Artists_The_Best_Of_Nujabes_Mix-front-large.jpg?1500925935", artist_id: nujabes.id)
-# Song.create!(title: "Battle Cry", genre: "Hiphop", song_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/tracks/000/000/037/original/48_-_Battlecry_ft_Shing02.mp3?1501003414", image_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/avatars/000/000/037/original/samurai.jpg?1501003415", artist_id: nujabes.id)
-# Song.create!(title: "Blessin' It", genre: "Hiphop", song_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/tracks/000/000/035/original/17_-_Blessing_It_Remix_ft_Pase_Rock__Substantial_Str.mp3?1500927125", image_url: "http://zach-listenhear-dev.s3.amazonaws.com/songs/avatars/000/000/035/original/Various_Artists_The_Best_Of_Nujabes_Mix-front-large.jpg?1500927125", artist_id: nujabes.id)
+# Song.create!(title: "Saeglópur",
+#   genre: "Post Rock",
+#   track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/06+S%C3%A6glo%CC%81pur.mp3",
+#   avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/Takk.jpg",
+#   artist_id: sigorRos.id)
+
+Song.create!(title: "New Year",
+  genre: "Indie Rock",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/01+The+New+Year.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/220px-Transatlanticism.jpg",
+  artist_id: deathcCabForCutie.id)
+
+Song.create!(title: "Just Forget",
+  genre: "Triphop",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/34+-+Just+forget+by+FORCE+OF+NATURENujabesFat+Jon.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/Samurai-champloo-music-record-impression.gif",
+  artist_id: nujabes.id)
+
+Song.create!(title: "Sandstorm",
+  genre: "Techno",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/Darude-Sandstorm.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/darude-sandstorm.jpg",
+  artist_id: darude.id)
+
+Song.create!(title: "Peaceland",
+  genre: "Triphop",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/37+-+Peaceland.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/Various_Artists_The_Best_Of_Nujabes_Mix-front-large.jpg",
+  artist_id: nujabes.id)
+
+Song.create!(title: "Battle Cry",
+  genre: "Triphop",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/48+-+Battlecry+ft+Shing02.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/samurai.jpg",
+  artist_id: nujabes.id)
+
+Song.create!(title: "Your Heart is an Empty Room",
+  genre: "Indie Rock",
+  track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/06+Your+Heart+Is+An+Empty+Room.mp3",
+  avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/Death_Cab_For_Cutie_-_Plans.png",
+  artist_id: deathcCabForCutie.id)

@@ -11,7 +11,6 @@ class User < ApplicationRecord
 	has_attached_file :cover_art, default_url: "http://kindertravelguide.com/wp-content/uploads/2016/01/Light-Grey-Background-3.jpg"
 	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
 
-
 	after_initialize :ensure_session_token
 	# before_validation :ensure_session_token_uniqueness
 
