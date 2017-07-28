@@ -5,10 +5,10 @@ class User < ApplicationRecord
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
-	has_attached_file :avatar, default_url: "http://www.washingtonpost.com/sf/sports/wp-content/uploads/sites/2/2015/02/headphones_icon_333_small.png"
+	has_attached_file :avatar, default_url: "https://www.washingtonpost.com/sf/sports/wp-content/uploads/sites/2/2015/02/headphones_icon_333_small.png", s3_protocol: :https
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-	has_attached_file :cover_art, default_url: "http://kindertravelguide.com/wp-content/uploads/2016/01/Light-Grey-Background-3.jpg"
+	has_attached_file :cover_art, default_url: "https://kindertravelguide.com/wp-content/uploads/2016/01/Light-Grey-Background-3.jpg", s3_protocol: :https
 	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
 
 	after_initialize :ensure_session_token
