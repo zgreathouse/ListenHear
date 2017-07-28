@@ -18,7 +18,8 @@ class CommentIndexItem extends React.Component {
       <li className='comment-item'>
         <section>
         <div>
-          <Link to={`/users/${comment.user_id}`}>
+          {/* <img className="nav-profile-image" height="40" width="40" src={this.props.user.image_url}/> */}
+          <Link to={`/users/${comment.user_id}`} className="user-link">
             <p>{comment.user_username}</p>
           </Link>
         </div>

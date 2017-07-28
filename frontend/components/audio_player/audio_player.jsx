@@ -8,7 +8,8 @@ class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { playing: props.playing };
+    this.state = { playing: props.playing,
+      currentSong: props.currentSong };
 
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handlePauseClick = this.handlePauseClick.bind(this);
@@ -16,12 +17,33 @@ class AudioPlayer extends React.Component {
     this.renderSeekPos = this.renderSeekPos.bind(this);
   }
 
-  handlePlayClick () {
-    this.props.playAudioPlayer();
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState({
+  //     playing: nextProps.audioPlayer.playing,
+  //   });
+  //   if(nextProps.audioPlayer.currentSong !== this.props.audioPlayer.currentSong){
+  //     this.clearRAF();
+  //   }
+  //   this.setState({
+  //     currentSong: nextProps.playback.currentTrack,
+  //   });
+  // }
 
-  handlePauseClick() {
-    this.props.pauseAudioPlayer();
+  // componentDidUpdate(prevProps, prevState){
+  //   if(!prevState.playing && this.state.playing && this.state.loaded){
+  //     this.renderSeekPos();
+  //   }
+  // }
+
+
+  renderSeekPos () {
+    this.setState({
+        seek: this.player.seek(),
+        progress: (this.player.seek() / this.player.duration())
+      });
+      if (this.state.playing) {
+        this._raf = raf(this.renderSeekPos);
+      }
   }
 
   handleOnLoad () {
@@ -34,19 +56,22 @@ class AudioPlayer extends React.Component {
     }
   }
 
-  getDuration () {
-    this.player.duration()
+  clearRAF () {
+    raf.cancel(this._raf);
   }
 
-  renderSeekPos () {
-    this.setState({
-        seek: this.player.seek(),
-        progress: (this.player.seek() / this.player.duration())
-      });
-      if (this.state.playing) {
-        this._raf = raf(this.renderSeekPos);
-      }
+  minutesSeconds(s) {
+    return(s-(s%=60))/60+(9<s?':':':0')+s;
   }
+
+  handlePlayClick () {
+    this.props.playAudioPlayer();
+  }
+
+  handlePauseClick() {
+    this.props.pauseAudioPlayer();
+  }
+
 
   render () {
     const Line = ProgressBar.Line;
@@ -74,6 +99,8 @@ class AudioPlayer extends React.Component {
                 src={this.props.songs[this.props.currentSong].song_url}
                 playing={this.props.playing}
                 html5={true}
+                // onLoad={this.handleOnLoad}
+                // ref={(ref) => (this.player = ref)}
               />
 
             <div className="audio-footer-flex">

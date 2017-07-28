@@ -38,7 +38,7 @@ Song.create!(title: "Another Reflection",
   track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/01+-+Reflection+Eternal.mp3",
   avatar: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Song+Art/220px-ModalMusic.jpg",
   artist_id: nujabes.id)
-# 
+#
 # Song.create!(title: "Saeglópur",
 #   genre: "Post Rock",
 #   track: "https://s3-us-west-1.amazonaws.com/zach-listenhear-dev/seeds/Songs/06+S%C3%A6glo%CC%81pur.mp3",
