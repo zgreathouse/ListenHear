@@ -8,7 +8,7 @@ class User < ApplicationRecord
 	has_attached_file :avatar, default_url: "https://www.washingtonpost.com/sf/sports/wp-content/uploads/sites/2/2015/02/headphones_icon_333_small.png", s3_protocol: :https
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
-	has_attached_file :cover_art, default_url: "https://kindertravelguide.com/wp-content/uploads/2016/01/Light-Grey-Background-3.jpg", s3_protocol: :https
+	has_attached_file :cover_art, default_url: "https://vignette2.wikia.nocookie.net/yandere-simulator/images/a/a9/Blank-background.jpg/revision/latest?cb=20160223215324&format=original", s3_protocol: :https
 	validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
 
 	after_initialize :ensure_session_token
