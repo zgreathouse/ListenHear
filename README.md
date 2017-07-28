@@ -11,7 +11,7 @@
 - Comment on other user's uploads
 - User pages
 
-##Programming Languages
+## Programming Languages
 - JavaScript (version ES6)
 - Ruby
 
@@ -36,7 +36,7 @@ User's passwords are stored in the database as a salted hash using BCrypt. Salti
 
 Upload your own songs for others to hear, or delete them as needed. Also features song show pages.
 
-![song_show](/app/assets/images/songShow.gif)
+![song_show](/app/assets/images/songshow.gif)
 
 ### Continuous Play
 
