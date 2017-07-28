@@ -86,17 +86,28 @@
 .artist-title {
   margin-top: 30px;
   margin-left: 10px;
+  :hover {
+    color: #F50;
+  }
 }
 
 .song-item-artist {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  color: #333;
+  :hover {
+    color: #F50;
+  }
 }
 
 .song-item-title {
+  :hover {
+    color: #F50;
+  }
   font-size: 18px;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   width: 150px;
+  color: #333;
 }
 
 .song-item-left {
@@ -169,19 +180,16 @@
 }
 
 .upload-form-right {
-  // border: 1px solid black;
   display: flex;
-  align-items: right;
+  justify-content: center;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 240px;
-  margin-top: -18px;
-  padding: 20px;
+  margin-bottom: 25px;
+  background: transparent;
+  border: none;
+  padding-left: 40px;
 }
 
 .upload-button-flex {
-  // border: 1px solid black;
-  // margin-left: 50px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -190,29 +198,51 @@
 
 .choose_file_buttons {
   width: 170px;
+  height: 30px;
   border-radius: 6px;
   // font-weight: lighter;
 }
 
 .upload-button {
-  width: 260px;
-  height: 40px;
+  width: 300px;
+  height: 50px;
   background: #f50;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
+  text-align: center;
   border-radius: 8px;
   font-weight: lighter;
   align: center;
+
 }
 
-.upload-input {
-  height: 24px;
-  width: 160px;
+.upload-input-cover-art {
+  height: 40px;
+
+}
+
+.upload-input-title {
+  height: 30px;
+  width: 560px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+}
+
+.upload-input-genre {
+  height: 30px;
+  width: 560px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
 }
 
 .upload-input-description {
-  height: 70px;
-  width: 350px;
+  height: 80px;
+  width: 560px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
 }
 
 /********************************************/
