@@ -1,6 +1,10 @@
 import merge from 'lodash/merge';
 
-import { PLAY_AUDIO_PLAYER, PAUSE_AUDIO_PLAYER, ASSIGN_CURRENT_SONG } from '../actions/audio_player_actions';
+
+//actions
+import { PLAY_AUDIO_PLAYER,
+  PAUSE_AUDIO_PLAYER,
+  ASSIGN_CURRENT_SONG } from '../actions/audio_player_actions';
 
 const initialState = () => ({
   playing: false,

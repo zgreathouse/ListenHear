@@ -41,9 +41,11 @@ class UserSplashPage extends React.Component {
 
   render() {
     const { user, currentUser, songs, receiveSong } = this.props;
+
     if (!this.props.user) {
       return null;
     }
+
     let songList;
     let songListHeader;
     let editProfPicButton;

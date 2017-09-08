@@ -27,9 +27,11 @@ class FrontPageSongIndex extends React.Component {
     ));
 
     return (
-        <ul className="front-page-all-songs">
-          { allSongs }
-        </ul>
+        <div className="front-page-all-songs-flex">
+          <ul className="front-page-all-songs">
+            { allSongs }
+          </ul>
+        </div>
     );
   }
 }

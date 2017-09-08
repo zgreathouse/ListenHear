@@ -12,9 +12,11 @@ class UploadForm extends React.Component {
       image_url: '',
       track: '',
       artist_id: this.props.id};
+
     if (this.props.song) {
       this.state = this.props.song;
     }
+    
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.setImage = this.setImage.bind(this);
@@ -89,6 +91,7 @@ class UploadForm extends React.Component {
             {this.state.image_url.length > 0 ? <img height="150" width="150" src={this.state.image_url}
                alt="album-art" /> : <div></div>}
             <br/>
+
             <div className="upload-input-cover-art">
               <p>Choose Cover Art</p>
               <input className="choose_file_buttons" type="file" onChange={this.setImage}/>

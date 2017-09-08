@@ -41,6 +41,7 @@ class SongDetail extends React.Component {
 
   render() {
     const { song, currentUser } = this.props;
+
     if (!song) {
       return null
     }
@@ -56,7 +57,6 @@ class SongDetail extends React.Component {
     } else {
       deleteButton = <div></div>
     }
-
 
     return (
       <div className="song-details-page">

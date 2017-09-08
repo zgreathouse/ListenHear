@@ -10,7 +10,7 @@ class SplashPage extends React.Component {
 
     this.demoSignIn = this.demoSignIn.bind(this);
   }
-
+  
   demoSignIn(signin, e) {
     e.preventDefault();
     const demoUser = {username: 'guest', password: 'password1'};

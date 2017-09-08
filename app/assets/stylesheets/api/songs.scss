@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .root-page-index {
-  height: 600px;
+  height: 70vh;
   background-color: white;
-  margin-top: 93px;
+  margin-top: 12vh;
 }
 
 .root-index-header {
-  font-size: 24px;
+  font-size: 3.5vh;
   text-align: center;
-  padding-top: 20px;
-  margin-bottom: 30px;
+  padding-top: 3vh;
+  margin-bottom: 3vh;
   font-weight: lighter;
 }
 
@@ -320,7 +320,7 @@
 }
 
 .image-show-page {
-  width:800px;
+  width: 800px;
   display: flex;
   justify-content: flex-end;
 }
@@ -346,29 +346,30 @@
 /****************************************/
 /* front page */
 
-
+.front-page-all-songs-flex {
+  display: flex;
+  height: 70vh;
+}
 
 .front-page-all-songs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 1100px;
-  height: 500px;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 40px;
+  width: 160vh;
+  height: 40vh;
+  margin: 0vh;
+  padding: 0vh;
 }
 
 .container {
   position: relative;
-  width: 60px;
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 25vh;
+  height: 25vh;
   transition: .5s ease;
   backface-visibility: hidden;
 }

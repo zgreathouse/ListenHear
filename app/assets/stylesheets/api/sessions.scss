@@ -5,10 +5,11 @@
 /*Splash Page*/
 .signin-signup {
   border: #f50 solid 1px;
-  height: 450px;
+  height: 60vh;
+  width: 157vh;
   background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg) 0 0/cover no-repeat;
-  margin-right: 80px;
-  margin-left: 80px;
+  margin-right: 10vh;
+  margin-left: 10vh;
   border-top: #f50 solid 7px;
   margin-top: -6px;
 }
@@ -20,16 +21,16 @@
 }
 
 .logo {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 5vh;
+  margin-left: 5vh;
   color: white;
   font-size: 28px;
 }
 
 .signin-signup-buttons {
   display: flex;
-  margin-top: 30px;
-  margin-right: 30px;
+  margin-top: 5vh;
+  margin-right: 5vh;
   float: right;
   text-align: center;
 }
@@ -41,11 +42,11 @@
 
 .guest {
   background-color: transparent;
-  font-size: 14px;
+  font-size: 2vh;
   color: white;
   border-radius: 2px;
-  height: 30px;
-  width: 170px;
+  height: 4vh;
+  width: 24vh;
   font-weight: lighter;
   &:hover {
     background-color: #f50;
@@ -54,11 +55,11 @@
 
 .signin-button {
   background-color: transparent;
-  font-size: 14px;
+  font-size: 2vh;
   color: white;
   border-radius: 2px;
-  height: 30px;
-  width: 100px;
+  height: 4vh;
+  width: 18vh;
   font-weight: lighter;
   cursor: pointer;
   &:hover {
@@ -68,11 +69,11 @@
 
 .signup-button {
   background-color: #f50;
-  font-size: 14px;
+  font-size: 2vh;
   color: white;
   border-radius: 2px;
-  height: 30px;
-  width: 160px;
+  height: 4vh;
+  width: 18vh;
   font-weight: lighter;
   cursor: pointer;
   &:hover {
@@ -85,17 +86,18 @@
   justify-content: center;
   align-items: center;
   color: white;
-  width: 100%;
-  padding-top: 80px;
+  width: 111vh;
+  height: 31vh;
+  padding-top: 9vh;
 }
 
 .welcome {
-  font-size: 36px;
+  font-size: 5.4vh;
   text-align: center;
 }
 
 .message {
-  font-size: 18px;
+  font-size: 2.4vh;
   text-align: center;
   font-weight: lighter;
 }
@@ -134,6 +136,7 @@
   /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
   background: #f50;
   color: white;
+  text-align: center;
   font-size: 14px;
   border-radius: 8px;
   font-weight: lighter;
